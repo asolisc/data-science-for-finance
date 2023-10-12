@@ -1,1 +1,1 @@
-# data-science-for-finance
+# Data Science for Finance with R
