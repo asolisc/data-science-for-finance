@@ -1,0 +1,4 @@
+- source: project
+  quarto-pub:
+    - id: c61d25eb-6c64-46a9-94a2-6447af4fc2ca
+      url: 'https://lalocarrillo92.quarto.pub/r-for-data-science---quarto'

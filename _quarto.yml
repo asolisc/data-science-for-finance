@@ -1,0 +1,119 @@
+project:
+  type: website
+
+website:
+  title: "R for Data Science"
+  
+  sidebar: 
+    style: docked
+    search: true
+    contents: 
+      - section: "0. Pre-work"
+        contents:
+          - "Install R and R Studio"
+          - "Installing R Packages"
+          - "RStudio Important Options (e.g. rainbow parentheses, not saving .Rdata, etc.)"
+          - "Customizing your RStudio"
+          
+      - section: "1. Introduction"
+        contents:
+          - "Why R and not just Excel for Finance?"
+          - "Challenge (R vs. Excel)"
+          - "Why data science for finance? (A story of three funds)"
+          - "Why “A Tidy Introduction”? What is the tidyverse?"
+          - "R Coding Basics: R basics and workflows"
+          - "Downloading course materials and RStudio projects"
+          - "Datasets for this course"
+          - "Whole game"
+          
+      - section: "2. Workflows"
+        contents:
+          - "RProjects"
+          - "Console vs. scripts"
+          - "Scripts vs. Quarto"
+          - "Getting help"
+          - "ChatGPT vs. Stackoverflow"
+
+          
+      - section: "3. Importing Data"
+        contents:
+          - "Feeding data into R"
+          - "Reading data from a file"
+          - "Absolute vs. relative paths"
+          - "Controlling column types"
+          - "Reading data from multiple files"
+          - "Writing to a file"
+          - "Writing to the clipboard"
+          - "Writing to Excel"
+          - "Data entry (use DataPasta add-on)"
+          - "Importing financial data using yfR"
+          - "Importing data from APIs?"
+          
+      - section: "4. Data manipulation"
+        contents:
+          - "Introduction to dplyr"
+          - "Working with columns"
+          - "The magrittr pipe"
+          - "The base R pipe"
+          - "Groups and summarising"
+          - "reframe() and mutate() with groups"
+          - "Case Study"
+          
+      - section: "5.  Data transformation"
+        contents:
+          - "Logical vectors"
+          - "Numbers"
+          - "Strings"
+          - "Regular expressions"
+          - "Factors"
+          - "Dates and times"
+          - "Missing values"
+          - "Joins"
+          
+      - section: "6. Data visualization"
+        contents:
+          - "qplot()"
+          - "Intro: ggplot2 and the grammar of graphics"
+          - "Grammar"
+          - "Layers"
+          - "Polish"
+          - "Annotation"
+          - "Multipanel"
+          - "Exploratory Data Analysis for Finance"
+          - "Intro to “Fin data viz”"
+          
+      - section: "7. Data tidying"
+        contents:
+          - "What is tidy data?"
+          - "Why tidying data matters?"
+          - "Lengthening data"
+          - "Widening data"
+          
+      - section: "8. Programming I: Functions"
+      
+      - section: "9. Programming II: Iteration"
+      
+      - section: "10. Programming III: Base R"
+      
+      - section: "11. Quarto"
+          
+          
+      
+      
+      
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - about.qmd
+      
+
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+
+editor: visual
+
