@@ -12,5 +12,33 @@
     "title": "R for Data Science",
     "section": "",
     "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\n\n1 + 1\n\n[1] 2\n\n2+5\n\n[1] 7\n\n\nHi!"
+  },
+  {
+    "objectID": "00_Pre-Work.html#new-slide",
+    "href": "00_Pre-Work.html#new-slide",
+    "title": "Data Science for Finance",
+    "section": "New slide",
+    "text": "New slide"
+  },
+  {
+    "objectID": "00_Pre-Work.html#why-r-and-not-python",
+    "href": "00_Pre-Work.html#why-r-and-not-python",
+    "title": "Data Science for Finance",
+    "section": "Why R and not Python",
+    "text": "Why R and not Python\n\nUnparalleled data manipulation libraries based on tidy principles   \nCohesive and intuitive plotting ecosystem\nMachine learning with tidy principles"
+  },
+  {
+    "objectID": "00_Pre-Work.html#about-this-course",
+    "href": "00_Pre-Work.html#about-this-course",
+    "title": "Data Science for Finance",
+    "section": "About this course",
+    "text": "About this course\nThe course will run for 6 weekends.\n\nCombines slides, live coding examples, quiz questions, and exercises for you to participate in.\nYou will need to install the software used throughout the course.\nSoftware consists of:\n\nProgramming Language Core: R\nIntegrated Development Environment (IDE): RStudio\nR extensions: Packages (or libraries)"
+  },
+  {
+    "objectID": "00_Pre-Work.html#course-resources",
+    "href": "00_Pre-Work.html#course-resources",
+    "title": "Data Science for Finance",
+    "section": "Course Resources",
+    "text": "Course Resources\n\nCourse Website\nGitHub Repository\nMain Book: R for Data Science (2e)"
   }
 ]
