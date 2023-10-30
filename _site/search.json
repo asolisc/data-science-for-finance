@@ -40,5 +40,12 @@
     "title": "Data Science for Finance",
     "section": "Course Resources",
     "text": "Course Resources\n\nCourse Website\nGitHub Repository\nMain Book: R for Data Science (2e)"
+  },
+  {
+    "objectID": "00_Pre-Work.html#what-is-r",
+    "href": "00_Pre-Work.html#what-is-r",
+    "title": "Data Science for Finance",
+    "section": "What is R?",
+    "text": "What is R?\nR is a programming language and free software environment for data science, statistical computing, and graphics.\nR was concieved in 1992 by Ross Ihaka and Robert Gentleman as an open source (that is, the original source code is made freely available) implementation of the S programming language.\nSince its release in 1995, R has outgrown its original purpose and is now used to:\n\nrun statistical analysis and data workflows"
   }
 ]

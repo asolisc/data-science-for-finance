@@ -34,7 +34,7 @@ Data Science<br />for the Financial Analyst
 
 <!-- `r fontawesome::fa("github", "white")` [github.com/asolisc/data-science-for-finance](https://github.com/asolisc/data-science-for-finance) -->
 
-![](https://raw.githubusercontent.com/rstudio/hex-stickers/master/PNG/tidyverse.png){.absolute top="280" left="650" width="250"}
+![](https://raw.githubusercontent.com/rstudio/hex-stickers/master/PNG/tidyverse.png){.absolute top="310" left="650" width="250"}
 
 <!-- From bottom left to upper right: -->
 
@@ -50,6 +50,17 @@ The course will run for 6 weekends.
     -   **Programming Language Core**: R
     -   **Integrated Development Environment (IDE)**: RStudio
     -   **R extensions**: Packages (or libraries)
+    
+
+## What is R?
+
+R is a programming language and free software environment for data science, statistical computing, and graphics.
+
+R was concieved in 1992 by **Ross Ihaka** and **Robert Gentleman** as an open source (that is, the original source code is made freely available) implementation of the S programming language.
+
+Since its release in 1995, R has outgrown its original purpose and is now used to:
+
+- run statistical analysis and data workflows
 
 ## Course Resources
 
