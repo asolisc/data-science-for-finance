@@ -78,6 +78,9 @@
     "title": "Data Science for Finance",
     "section": "",
     "text": "title: “03_Importing_Data”\n\nWe’ll start loading library…\n\nlibrary(readxl)\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.3     ✔ readr     2.1.4\n✔ forcats   1.0.0     ✔ stringr   1.5.0\n✔ ggplot2   3.4.3     ✔ tibble    3.2.1\n✔ lubridate 1.9.3     ✔ tidyr     1.3.0\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors"
+<<<<<<< HEAD
 >>>>>>> a81bc72cbecf8d66a8d559438cc2c1f19622753b
+=======
+>>>>>>> 153e34fbd842a85cc13fe8df8187f5ce3ad946a3
   }
 ]
