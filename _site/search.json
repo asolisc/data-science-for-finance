@@ -46,6 +46,7 @@
     "href": "00_Pre-Work.html#what-is-r",
     "title": "Data Science for Finance",
     "section": "What is R?",
+<<<<<<< HEAD
     "text": "What is R?\nR is a programming language and free software environment for data science, statistical computing, and graphics.\nR was conceived in 1992 by Ross Ihaka and Robert Gentleman as an open source (that is, the original source code is made freely available) implementation of the S programming language.\nSince its release in 1995, R has outgrown its original purpose and is now super versatile. It can, among other things help you to:\n\nrun statistical analysis and data workflows\ndesign incredible, publication-ready visualizations\ngenerate automated reports\ncreate web applications\nCreate presentation slides, books, and even entire websites!"
   },
   {
@@ -68,5 +69,15 @@
     "title": "Data Science for Finance",
     "section": "Why (not) R?",
     "text": "Why (not) R?\nPros:\n\nUnparalleled data manipulation libraries based on tidy principles   \nCohesive and intuitive plotting ecosystem\nMachine learning with tidy principles\nfree, open source, and platform-independent.\nwide range of dedicated packages provide extra functionality\nstrong capabilities for data analysis and visualization\nhuge (and open) online community\ngiven its focus on functions, it offers an easy transition into code (especially when coming from an Excel background)\n\nCons:\n\nperformance: scalability, memory and speed\nsteep learning curve (as likely any programming language)\noften experienced as strange to code (from a programmer perspective)"
+=======
+    "text": "What is R?\nR is a programming language and free software environment for data science, statistical computing, and graphics.\nR was concieved in 1992 by Ross Ihaka and Robert Gentleman as an open source (that is, the original source code is made freely available) implementation of the S programming language.\nSince its release in 1995, R has outgrown its original purpose and is now used to:\n\nrun statistical analysis and data workflows"
+  },
+  {
+    "objectID": "03_Importing_Data.html",
+    "href": "03_Importing_Data.html",
+    "title": "Data Science for Finance",
+    "section": "",
+    "text": "title: “03_Importing_Data”\n\nWe’ll start loading library…\n\nlibrary(readxl)\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.3     ✔ readr     2.1.4\n✔ forcats   1.0.0     ✔ stringr   1.5.0\n✔ ggplot2   3.4.3     ✔ tibble    3.2.1\n✔ lubridate 1.9.3     ✔ tidyr     1.3.0\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors"
+>>>>>>> a81bc72cbecf8d66a8d559438cc2c1f19622753b
   }
 ]
