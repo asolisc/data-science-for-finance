@@ -2,22 +2,12 @@
 title: "03_Importing_Data"
 ---
 
-Pull and push data from Github:
-
-```{r}
-library(gert)
-git_pull()
-git_add("03_Importing_Data.qmd")
-git_commit_all()
-git_push()
-```
-
-
 3.1 Introduction
 
 This chapter will teach you the basics of bringing data files into R. Specifically, it will focus on reading plain-text rectangular files. You'll get practical advice on handling things like column names, types, and missing data. You'll also learn about reading data from multiple files and writing data from R to a file. Finally, you'll learn how to create data frames in R. In this chapter, you'll learn how to load flat files in R using the readr package, which is a part of the core tidyverse.
 
 We'll start loading libraries...
+
 ```{r}
 library(readxl)
 library(tidyverse)
@@ -73,6 +63,7 @@ You can use the **`quantmod`** package in R to retrieve stock market data from Y
 
 ```{r}
 # Load required libraries
+
 install.packages("quantmod")
 library(quantmod)
 
@@ -92,3 +83,23 @@ head(GSPC)
 ```
 
 This script fetches the daily prices of the S&P 500 index from Yahoo Finance starting from the specified start date up to the current date. You can customize the **`start_date`** and **`end_date`** variables to specify the time range for which you want to retrieve the data. The **`head(GSPC)`** function is used to display the first few rows of the retrieved data.
+
+```{r}
+install.packages('yfR')
+library(yfR)
+library(lubridate) # for date manipulations
+library(dplyr) # for data manipulations
+
+# set options for algorithm
+my_ticker <- '^GSPC'
+first_date <- "1950-01-01"
+last_date <- Sys.Date()
+
+# fetch data
+df_yf <- yf_get(tickers = my_ticker, 
+                first_date = first_date,
+                last_date = last_date)
+
+# output is a tibble with data
+glimpse(df_yf)
+```
