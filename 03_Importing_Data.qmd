@@ -1,5 +1,3 @@
-------------------------------------------------------------------------
-
 ---
 title: "03_Importing_Data"
 ---
@@ -9,46 +7,17 @@ Pull and push data from Github:
 ```{r}
 library(gert)
 git_pull()
-<<<<<<< HEAD
 git_add("03_Importing_Data.qmd")
 git_commit_all()
 git_push()
 ```
 
-library(gert) git_pull() \# actualizar tu folder local con lo que hay en el repositorio GitHub
-
-git_add(".") \# con esto agregas todos tus cambios al 'staging'. 'staging' = estoy siguiendo los cambios de esos archivos.
-
-git_commit("Mensaje descriptivo de commit") \# con commit estás añadiendo un mensaje a los cambios que estás haciendo y los cambios los estás "guardando"
-
-git_push() \# último comando. Es para subir todos tus commits al repositorio.
 
 3.1 Introduction
 
-=======
-
-system("git config user.name 'lalocarrillo92' ")
-system("git config user.email 'lalo_carrillo92@hotmail.com' ")
-
-
-git_add("03_Importing_Data.qmd")
-git_commit("03_Importing_Data.qmd")
-git_push()
-```
-
-
-3.1 Introduction
-
-
->>>>>>> 153e34fbd842a85cc13fe8df8187f5ce3ad946a3
 This chapter will teach you the basics of bringing data files into R. Specifically, it will focus on reading plain-text rectangular files. You'll get practical advice on handling things like column names, types, and missing data. You'll also learn about reading data from multiple files and writing data from R to a file. Finally, you'll learn how to create data frames in R. In this chapter, you'll learn how to load flat files in R using the readr package, which is a part of the core tidyverse.
 
 We'll start loading libraries...
-
-<<<<<<< HEAD
-=======
-
->>>>>>> 153e34fbd842a85cc13fe8df8187f5ce3ad946a3
 ```{r}
 library(readxl)
 library(tidyverse)
