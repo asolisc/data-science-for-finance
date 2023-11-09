@@ -50,7 +50,6 @@ The course will run for 6 weekends.
     -   **Programming Language Core**: R
     -   **Integrated Development Environment (IDE)**: RStudio
     -   **R extensions**: Packages (or libraries)
-    
 
 ## What is R?
 
@@ -60,7 +59,7 @@ R was concieved in 1992 by **Ross Ihaka** and **Robert Gentleman** as an open so
 
 Since its release in 1995, R has outgrown its original purpose and is now used to:
 
-- run statistical analysis and data workflows
+-   run statistical analysis and data workflows
 
 ## Course Resources
 
@@ -75,21 +74,18 @@ Since its release in 1995, R has outgrown its original purpose and is now used t
 -   Machine learning with *tidy* principles
 
 # Installing R
+
 ![](https://discdown.org/rprogramming/images/02/02_R_cran.jpg)
 
-- Visit [this link to download both R and RStudio Desktop](https://posit.co/download/rstudio-desktop/)
-- Click on the button to your left and visit the Comprehensive R Archive Network (CRAN).
-- Click on the link that corresponds to your computer's OS.
-- Once downloaded, follow the instructions from the .exe file.
-- You can watch [this walk through](https://www.youtube.com/watch?v=YrEe2TLr3MI) if you are having any trouble with installation.
-
-
+-   Visit [this link to download both R and RStudio Desktop](https://posit.co/download/rstudio-desktop/)
+-   Click on the button to your left and visit the Comprehensive R Archive Network (CRAN).
+-   Click on the link that corresponds to your computer's OS.
+-   Once downloaded, follow the instructions from the .exe file.
+-   You can watch [this walk through](https://www.youtube.com/watch?v=YrEe2TLr3MI) if you are having any trouble with installation.
 
 # Installing RStudio
-Visit the [this link to download RStudio Desktop](https://posit.co/download/rstudio-desktop/)
-![](img/setup/posit-rstudio-download.png)
-- Visit
 
+Visit the [this link to download RStudio Desktop](https://posit.co/download/rstudio-desktop/) ![](img/setup/posit-rstudio-download.png) - Visit
 
 # RStudio Options
 

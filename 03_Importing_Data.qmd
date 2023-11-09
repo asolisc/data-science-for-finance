@@ -1,0 +1,104 @@
+------------------------------------------------------------------------
+
+---
+title: "03_Importing_Data"
+---
+
+Pull and push data from Github:
+
+```{r}
+library(gert)
+git_pull()
+git_add("03_Importing_Data.qmd")
+git_commit_all()
+git_push()
+```
+
+library(gert) git_pull() \# actualizar tu folder local con lo que hay en el repositorio GitHub
+
+git_add(".") \# con esto agregas todos tus cambios al 'staging'. 'staging' = estoy siguiendo los cambios de esos archivos.
+
+git_commit("Mensaje descriptivo de commit") \# con commit estás añadiendo un mensaje a los cambios que estás haciendo y los cambios los estás "guardando"
+
+git_push() \# último comando. Es para subir todos tus commits al repositorio.
+
+3.1 Introduction
+
+This chapter will teach you the basics of bringing data files into R. Specifically, it will focus on reading plain-text rectangular files. You'll get practical advice on handling things like column names, types, and missing data. You'll also learn about reading data from multiple files and writing data from R to a file. Finally, you'll learn how to create data frames in R. In this chapter, you'll learn how to load flat files in R using the readr package, which is a part of the core tidyverse.
+
+We'll start loading libraries...
+
+```{r}
+library(readxl)
+library(tidyverse)
+
+
+
+```
+
+3.2 Read data from Excel Files:
+
+To read Excel Files we'll need to install the library "readxl".
+
+Let's import daily prices of the S&P500, NASDAQ, DJIA, and IPC:
+
+```{r}
+library(readxl)
+SP_daily <- read_excel("data/xl/daily.xlsx")
+NASDAQ_daily <- read_excel("data/xl/daily.xlsx",2)
+DJIA_daily <- read_excel("data/xl/daily.xlsx",3)
+IPC_daily <- read_excel("data/xl/daily.xlsx",4)
+
+head(SP_daily) 
+head(IPC_daily)    
+
+```
+
+3.3 Reading Data from a CSV file
+
+Now we'll focus on the most common rectangular data file type: CSV, which is short for comma-separated values. Here is what a simple CSV file looks like. The first row, commonly called the header row, gives the column names, and the following six rows provide the data. The columns are separated, aka delimited, by commas.
+
+```         
+Student ID,Full Name,favourite.food,mealPlan,AGE
+1,Sunil Huffmann,Strawberry yoghurt,Lunch only,4
+2,Barclay Lynn,French fries,Lunch only,5
+3,Jayendra Lyne,N/A,Breakfast and lunch,7
+4,Leon Rossini,Anchovies,Lunch only,
+5,Chidiegwu Dunkel,Pizza,Breakfast and lunch,five
+6,Güvenç Attila,Ice cream,Lunch only,6
+```
+
+We can read this file into R using [`read_csv()`](https://readr.tidyverse.org/reference/read_delim.html). The first argument is the most important: the path to the file. You can think about the path as the address of the file: the file is called `students.csv` and that it lives in the `data` folder.
+
+```{r}
+library(read_csv)
+students <- read_csv("data/students.csv")
+students <- read_csv("https://pos.it/r4ds-students-csv")
+head(students)
+```
+
+3.4 Reading Data from Yahoo Finance
+
+You can use the **`quantmod`** package in R to retrieve stock market data from Yahoo Finance. Make sure you have the package installed. You can install it using **`install.packages("quantmod")`** if you haven't already. Here's an example of how to retrieve daily prices for the S&P 500 index from Yahoo Finance:
+
+```{r}
+# Load required libraries
+install.packages("quantmod")
+library(quantmod)
+
+# Define the ticker symbol for the S&P 500 index
+ticker <- "^GSPC"  # This is the ticker symbol for the S&P 500
+
+# Set the start and end dates
+start_date <- as.Date("2020-01-01")
+end_date <- Sys.Date()
+
+# Use the getSymbols function to fetch the data
+getSymbols(ticker, src = "yahoo", from = start_date, to = end_date)
+
+# Print the data
+head(GSPC)
+
+```
+
+This script fetches the daily prices of the S&P 500 index from Yahoo Finance starting from the specified start date up to the current date. You can customize the **`start_date`** and **`end_date`** variables to specify the time range for which you want to retrieve the data. The **`head(GSPC)`** function is used to display the first few rows of the retrieved data.
