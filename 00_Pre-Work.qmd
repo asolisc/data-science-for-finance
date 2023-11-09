@@ -6,7 +6,7 @@ format:
     logo: "https://cryptologos.cc/logos/cardano-ada-logo.svg?v=023"
     height: 1080
     width: 1920
-    incremental: true
+    incremental: false
 editor: visual
 # title-slide-attributes:
   # data-background-size: contain
@@ -16,7 +16,7 @@ editor_options:
   chunk_output_type: console
 ---
 
-#  {background-image="img/wallpaper/bbg_3.webp" background-color="#000000"}
+#  {background-image="img/wallpaper/bbg_test2.jpeg" background-color="#000000"}
 
 <h1 class="title_h1">
 
@@ -56,11 +56,16 @@ The course will run for 6 weekends.
 
 R is a programming language and free software environment for data science, statistical computing, and graphics.
 
-R was concieved in 1992 by **Ross Ihaka** and **Robert Gentleman** as an open source (that is, the original source code is made freely available) implementation of the S programming language.
+R was conceived in 1992 by **Ross Ihaka** and **Robert Gentleman** as an open source (that is, the original source code is made freely available) implementation of the S programming language.
 
-Since its release in 1995, R has outgrown its original purpose and is now used to:
+Since its release in 1995, R has outgrown its original purpose and is now super versatile. It can, among other things help you to:
 
 - run statistical analysis and data workflows
+- design incredible, publication-ready visualizations
+- generate automated reports
+- create web applications
+- Create presentation slides, books, and even entire websites!
+
 
 ## Course Resources
 
@@ -68,11 +73,36 @@ Since its release in 1995, R has outgrown its original purpose and is now used t
 -   [GitHub Repository](https://github.com/asolisc/data-science-for-finance)
 -   [Main Book: R for Data Science (2e)](https://r4ds.hadley.nz/)
 
-## Why R and not Python
+## Why (not) R?
+
+Pros:
 
 -   Unparalleled data manipulation libraries based on *tidy* principles ![](https://raw.githubusercontent.com/rstudio/hex-stickers/master/PNG/dplyr.png){.absolute top="235" left="1510" width="250"} ![](https://raw.githubusercontent.com/rstudio/hex-stickers/master/PNG/tidyr.png){.absolute top="685" left="990" width="250"} <br />
--   Cohesive and intuitive plotting ecosystem
--   Machine learning with *tidy* principles
+- Cohesive and intuitive plotting ecosystem
+- Machine learning with *tidy* principles
+- free, open source, and platform-independent.
+- wide range of dedicated packages provide extra functionality
+- strong capabilities for data analysis and visualization
+- huge (and open) online community
+- given its focus on functions, it offers an easy transition into code (especially when coming from an Excel background)
+
+Cons:
+
+- performance: scalability, memory and speed
+- steep learning curve (as likely any programming language)
+- often experienced as strange to code (from a programmer perspective)
+
+# R vs. RStudio
+
+![](https://hips.hearstapps.com/hmg-prod/amv-prod-cad-assets/wp-content/uploads/2016/06/2016-Mini-John-Cooper-Works-Challenge-128.jpg?resize=780:*)
+
+![](https://hips.hearstapps.com/hmg-prod/amv-prod-cad-assets/wp-content/uploads/2016/06/2016-Mini-John-Cooper-Works-Challenge-117.jpg?resize=780:*)
+
+
+- **RStudio** is an open-source IDE (Integrated Development Environment) for R
+- Most popular IDE
+- Many features + extensions to facilitate data science workflows
+- Multi-lingual IDE + customizable
 
 # Installing R
 ![](https://discdown.org/rprogramming/images/02/02_R_cran.jpg)
@@ -88,9 +118,32 @@ Since its release in 1995, R has outgrown its original purpose and is now used t
 # Installing RStudio
 Visit the [this link to download RStudio Desktop](https://posit.co/download/rstudio-desktop/)
 ![](img/setup/posit-rstudio-download.png)
-- Visit
+- Click on the button to your right and an .exe file will download. Follow the instruction from the .exe file.
+
+# Installing RTools (only for Windows OS)
+- Visit [this link to download RTools](https://cran.r-project.org/bin/windows/Rtools/)
+- Click on the link that corresponds to your R version (most probably Rtools 4.3)
+- Download the .exe and install it.
+
+
+# RStudio Tour
+![](https://rladiessydney.org/img/quadrants.jpg)
+
+- Q1 - contains: script, data, command to run script
+- Q2 - contains: console
+- Q3 - contains: environment
+- Q4 - contains: files, plots, packages, help
+
+# RStudio Settings
+
+Some people like Rstudio to remember stuff from session to session. We think this is dangerous. So to avoid future hassle, we recommend that you change two settings.
+
+Locate Preferences (on Mac, this is in the RStudio menu). In the General tab, uncheck “Restore .RData…” and select “never” for “Save workspace…”
+
+![](https://rladiessydney.org/img/settings.jpg)
 
 
 # RStudio Options
+
 
 # Make it yours! (Customize it)

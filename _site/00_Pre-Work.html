@@ -324,7 +324,7 @@
     <div class="slides">
 
 
-<section id="section" class="title-slide slide level1 center" data-background-image="img/wallpaper/bbg_3.webp" data-background-color="#000000">
+<section id="section" class="title-slide slide level1 center" data-background-image="img/wallpaper/bbg_test2.jpeg" data-background-color="#000000">
 <h1></h1>
 <h1 class="title_h1">
 <p>Data Science<br>for the Financial Analyst</p>
@@ -349,57 +349,112 @@ Prework: Setup for the
 <h2>About this course</h2>
 <p>The course will run for 6 weekends.</p>
 <ul>
-<li class="fragment">Combines slides, live coding examples, quiz questions, and exercises for you to participate in.</li>
-<li class="fragment">You will need to install the software used throughout the course.</li>
-<li class="fragment">Software consists of:
+<li>Combines slides, live coding examples, quiz questions, and exercises for you to participate in.</li>
+<li>You will need to install the software used throughout the course.</li>
+<li>Software consists of:
 <ul>
-<li class="fragment"><strong>Programming Language Core</strong>: R</li>
-<li class="fragment"><strong>Integrated Development Environment (IDE)</strong>: RStudio</li>
-<li class="fragment"><strong>R extensions</strong>: Packages (or libraries)</li>
+<li><strong>Programming Language Core</strong>: R</li>
+<li><strong>Integrated Development Environment (IDE)</strong>: RStudio</li>
+<li><strong>R extensions</strong>: Packages (or libraries)</li>
 </ul></li>
 </ul>
 </section>
 <section id="what-is-r" class="slide level2">
 <h2>What is R?</h2>
 <p>R is a programming language and free software environment for data science, statistical computing, and graphics.</p>
-<p>R was concieved in 1992 by <strong>Ross Ihaka</strong> and <strong>Robert Gentleman</strong> as an open source (that is, the original source code is made freely available) implementation of the S programming language.</p>
-<p>Since its release in 1995, R has outgrown its original purpose and is now used to:</p>
+<p>R was conceived in 1992 by <strong>Ross Ihaka</strong> and <strong>Robert Gentleman</strong> as an open source (that is, the original source code is made freely available) implementation of the S programming language.</p>
+<p>Since its release in 1995, R has outgrown its original purpose and is now super versatile. It can, among other things help you to:</p>
 <ul>
-<li class="fragment">run statistical analysis and data workflows</li>
+<li>run statistical analysis and data workflows</li>
+<li>design incredible, publication-ready visualizations</li>
+<li>generate automated reports</li>
+<li>create web applications</li>
+<li>Create presentation slides, books, and even entire websites!</li>
 </ul>
 </section>
 <section id="course-resources" class="slide level2">
 <h2>Course Resources</h2>
 <ul>
-<li class="fragment"><a href="">Course Website</a></li>
-<li class="fragment"><a href="https://github.com/asolisc/data-science-for-finance">GitHub Repository</a></li>
-<li class="fragment"><a href="https://r4ds.hadley.nz/">Main Book: R for Data Science (2e)</a></li>
+<li><a href="">Course Website</a></li>
+<li><a href="https://github.com/asolisc/data-science-for-finance">GitHub Repository</a></li>
+<li><a href="https://r4ds.hadley.nz/">Main Book: R for Data Science (2e)</a></li>
 </ul>
 </section>
-<section id="why-r-and-not-python" class="slide level2">
-<h2>Why R and not Python</h2>
+<section id="why-not-r" class="slide level2">
+<h2>Why (not) R?</h2>
+<p>Pros:</p>
 <ul>
-<li class="fragment">Unparalleled data manipulation libraries based on <em>tidy</em> principles <img data-src="https://raw.githubusercontent.com/rstudio/hex-stickers/master/PNG/dplyr.png" class="absolute" style="top: 235px; left: 1510px; width: 250px; "> <img data-src="https://raw.githubusercontent.com/rstudio/hex-stickers/master/PNG/tidyr.png" class="absolute" style="top: 685px; left: 990px; width: 250px; "> <br></li>
-<li class="fragment">Cohesive and intuitive plotting ecosystem</li>
-<li class="fragment">Machine learning with <em>tidy</em> principles</li>
+<li>Unparalleled data manipulation libraries based on <em>tidy</em> principles <img data-src="https://raw.githubusercontent.com/rstudio/hex-stickers/master/PNG/dplyr.png" class="absolute" style="top: 235px; left: 1510px; width: 250px; "> <img data-src="https://raw.githubusercontent.com/rstudio/hex-stickers/master/PNG/tidyr.png" class="absolute" style="top: 685px; left: 990px; width: 250px; "> <br></li>
+<li>Cohesive and intuitive plotting ecosystem</li>
+<li>Machine learning with <em>tidy</em> principles</li>
+<li>free, open source, and platform-independent.</li>
+<li>wide range of dedicated packages provide extra functionality</li>
+<li>strong capabilities for data analysis and visualization</li>
+<li>huge (and open) online community</li>
+<li>given its focus on functions, it offers an easy transition into code (especially when coming from an Excel background)</li>
+</ul>
+<p>Cons:</p>
+<ul>
+<li>performance: scalability, memory and speed</li>
+<li>steep learning curve (as likely any programming language)</li>
+<li>often experienced as strange to code (from a programmer perspective)</li>
 </ul>
 </section></section>
+<section id="r-vs.-rstudio" class="title-slide slide level1 center">
+<h1>R vs.&nbsp;RStudio</h1>
+<p><img data-src="https://hips.hearstapps.com/hmg-prod/amv-prod-cad-assets/wp-content/uploads/2016/06/2016-Mini-John-Cooper-Works-Challenge-128.jpg?resize=780:*"></p>
+<p><img data-src="https://hips.hearstapps.com/hmg-prod/amv-prod-cad-assets/wp-content/uploads/2016/06/2016-Mini-John-Cooper-Works-Challenge-117.jpg?resize=780:*"></p>
+<ul>
+<li><strong>RStudio</strong> is an open-source IDE (Integrated Development Environment) for R</li>
+<li>Most popular IDE</li>
+<li>Many features + extensions to facilitate data science workflows</li>
+<li>Multi-lingual IDE + customizable</li>
+</ul>
+</section>
+
 <section id="installing-r" class="title-slide slide level1 center">
 <h1>Installing R</h1>
 
 <img data-src="https://discdown.org/rprogramming/images/02/02_R_cran.jpg" class="r-stretch"><ul>
-<li class="fragment">Visit <a href="https://posit.co/download/rstudio-desktop/">this link to download both R and RStudio Desktop</a></li>
-<li class="fragment">Click on the button to your left and visit the Comprehensive R Archive Network (CRAN).</li>
-<li class="fragment">Click on the link that corresponds to your computer’s OS.</li>
-<li class="fragment">Once downloaded, follow the instructions from the .exe file.</li>
-<li class="fragment">You can watch <a href="https://www.youtube.com/watch?v=YrEe2TLr3MI">this walk through</a> if you are having any trouble with installation.</li>
+<li>Visit <a href="https://posit.co/download/rstudio-desktop/">this link to download both R and RStudio Desktop</a></li>
+<li>Click on the button to your left and visit the Comprehensive R Archive Network (CRAN).</li>
+<li>Click on the link that corresponds to your computer’s OS.</li>
+<li>Once downloaded, follow the instructions from the .exe file.</li>
+<li>You can watch <a href="https://www.youtube.com/watch?v=YrEe2TLr3MI">this walk through</a> if you are having any trouble with installation.</li>
 </ul>
 </section>
 
 <section id="installing-rstudio" class="title-slide slide level1 center">
 <h1>Installing RStudio</h1>
-<p>Visit the <a href="https://posit.co/download/rstudio-desktop/">this link to download RStudio Desktop</a> <img data-src="img/setup/posit-rstudio-download.png"> - Visit</p>
+<p>Visit the <a href="https://posit.co/download/rstudio-desktop/">this link to download RStudio Desktop</a> <img data-src="img/setup/posit-rstudio-download.png"> - Click on the button to your right and an .exe file will download. Follow the instruction from the .exe file.</p>
 </section>
+
+<section id="installing-rtools-only-for-windows-os" class="title-slide slide level1 center">
+<h1>Installing RTools (only for Windows OS)</h1>
+<ul>
+<li>Visit <a href="https://cran.r-project.org/bin/windows/Rtools/">this link to download RTools</a></li>
+<li>Click on the link that corresponds to your R version (most probably Rtools 4.3)</li>
+<li>Download the .exe and install it.</li>
+</ul>
+</section>
+
+<section id="rstudio-tour" class="title-slide slide level1 center">
+<h1>RStudio Tour</h1>
+
+<img data-src="https://rladiessydney.org/img/quadrants.jpg" class="r-stretch"><ul>
+<li>Q1 - contains: script, data, command to run script</li>
+<li>Q2 - contains: console</li>
+<li>Q3 - contains: environment</li>
+<li>Q4 - contains: files, plots, packages, help</li>
+</ul>
+</section>
+
+<section id="rstudio-settings" class="title-slide slide level1 center">
+<h1>RStudio Settings</h1>
+<p>Some people like Rstudio to remember stuff from session to session. We think this is dangerous. So to avoid future hassle, we recommend that you change two settings.</p>
+<p>Locate Preferences (on Mac, this is in the RStudio menu). In the General tab, uncheck “Restore .RData…” and select “never” for “Save workspace…”</p>
+
+<img data-src="https://rladiessydney.org/img/settings.jpg" class="r-stretch"></section>
 
 <section id="rstudio-options" class="title-slide slide level1 center">
 <h1>RStudio Options</h1>

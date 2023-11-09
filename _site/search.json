@@ -46,6 +46,27 @@
     "href": "00_Pre-Work.html#what-is-r",
     "title": "Data Science for Finance",
     "section": "What is R?",
-    "text": "What is R?\nR is a programming language and free software environment for data science, statistical computing, and graphics.\nR was concieved in 1992 by Ross Ihaka and Robert Gentleman as an open source (that is, the original source code is made freely available) implementation of the S programming language.\nSince its release in 1995, R has outgrown its original purpose and is now used to:\n\nrun statistical analysis and data workflows"
+    "text": "What is R?\nR is a programming language and free software environment for data science, statistical computing, and graphics.\nR was conceived in 1992 by Ross Ihaka and Robert Gentleman as an open source (that is, the original source code is made freely available) implementation of the S programming language.\nSince its release in 1995, R has outgrown its original purpose and is now super versatile. It can, among other things help you to:\n\nrun statistical analysis and data workflows\ndesign incredible, publication-ready visualizations\ngenerate automated reports\ncreate web applications\nCreate presentation slides, books, and even entire websites!"
+  },
+  {
+    "objectID": "00_Pre-Work.html#pros",
+    "href": "00_Pre-Work.html#pros",
+    "title": "Data Science for Finance",
+    "section": "Pros:",
+    "text": "Pros:\n\nfree, open source, and platform-independent.\nwide range of dedicated packages provide extra functionality\nhighly compatible with many other programming languages\nstrong capabilities for data analysis and visualization\nhuge (and open) online community\noften experienced as easy to code (from a non-programmer perspective)"
+  },
+  {
+    "objectID": "00_Pre-Work.html#cons",
+    "href": "00_Pre-Work.html#cons",
+    "title": "Data Science for Finance",
+    "section": "Cons:",
+    "text": "Cons:\n\nperformance: scalability, memory and speed\nsteep learning curve (as likely any programming language)\npotential security issues (relevant for web applications)\noften experienced as strange to code (from a programmer perspective)"
+  },
+  {
+    "objectID": "00_Pre-Work.html#why-not-r",
+    "href": "00_Pre-Work.html#why-not-r",
+    "title": "Data Science for Finance",
+    "section": "Why (not) R?",
+    "text": "Why (not) R?\nPros:\n\nUnparalleled data manipulation libraries based on tidy principles   \nCohesive and intuitive plotting ecosystem\nMachine learning with tidy principles\nfree, open source, and platform-independent.\nwide range of dedicated packages provide extra functionality\nstrong capabilities for data analysis and visualization\nhuge (and open) online community\ngiven its focus on functions, it offers an easy transition into code (especially when coming from an Excel background)\n\nCons:\n\nperformance: scalability, memory and speed\nsteep learning curve (as likely any programming language)\noften experienced as strange to code (from a programmer perspective)"
   }
 ]
