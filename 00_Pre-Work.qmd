@@ -50,7 +50,13 @@ The course will run for 6 weekends.
     -   **Programming Language Core**: R
     -   **Integrated Development Environment (IDE)**: RStudio
     -   **R extensions**: Packages (or libraries)
-    
+
+## Course Resources
+
+-   [Course Website]()
+-   [GitHub Repository](https://github.com/asolisc/data-science-for-finance)
+-   [Main Book: R for Data Science (2e)](https://r4ds.hadley.nz/)
+
 
 ## What is R?
 
@@ -67,11 +73,7 @@ Since its release in 1995, R has outgrown its original purpose and is now super 
 - Create presentation slides, books, and even entire websites!
 
 
-## Course Resources
 
--   [Course Website]()
--   [GitHub Repository](https://github.com/asolisc/data-science-for-finance)
--   [Main Book: R for Data Science (2e)](https://r4ds.hadley.nz/)
 
 ## Why (not) R?
 
@@ -143,7 +145,83 @@ Locate Preferences (on Mac, this is in the RStudio menu; for Windows, go to Tool
 ![](https://rladiessydney.org/img/settings.jpg)
 
 
-# RStudio Options
+# RStudio Themes and Fonts
+Type and run the following code into 
+
+```{r, eval=FALSE}
+install.packages("devtools")
+devtools::install_github("gadenbuie/rsthemes")
+rsthemes::install_rsthemes(include_base16 = TRUE)
+```
+
+
+# RStudio Command Palette
+
+The Command Palette allows you to search for multiple RStudio commands, which is useful when you cannot find a specific functionality.
+
+Imagine you can't remember where to change the appearance of RStudio. You can invoke the Command Palette and type "app" (appearance) and the palette returns a good match: Appearance Options.
+
+:::: {.columns}
+
+::: {.column width="50%"}
+Windows Logo
+
+CTRL + SHIFT + P
+::::
+::: {.column width="50%"}
+MacOS Logo
+
+Command + SHIFT + P
+::::
+::::
+
+Tools > Show Command Palette
+
+
+![](img/setup/rstudio_command_palette.png)
+
+
+# RStudio Recommended Layout
+
+Tools > Global Options > Pane Layout
+
+![](img/setup/recommended_layout.png)
+
+# Installing R Packages
+
+<Limpiar lista de libraries>
+
+```{r}
+packages <- c(
+  "ggplot2", "readr", "tibble", "tidyr", "forcats", "stringr",
+  "lubridate", "here", "systemfonts", "magick", "scales", "grid",
+  "grDevices", "colorspace", "viridis", "RColorBrewer", "rcartocolor",
+  "scico", "ggsci", "ggthemes", "nord", "MetBrewer", "ggrepel",
+  "ggforce", "ggtext", "ggdist", "ggbeeswarm", "gghalves", "patchwork", 
+  "palmerpenguins", "rnaturalearth", "sf", "rmapshaper", "devtools"
+)
+```
+
+
+```{r, eval = FALSE}
+install.packages(packages)
+```
+
+
+# Required Fonts
+
+- Roboto Condensed: fonts.google.com/specimen/Roboto+Condensed
+- Cabinet Grotesk: fontshare.com/fonts/cabinet-grotesk
+- Tabular: fontshare.com/fonts/tabular
+- Boska: fontshare.com/fonts/boska
+- Pally: fontshare.com/fonts/pally
 
 
 
+
+Para la intro:
+
+
+# Coding Basics
+
+<From R4DS 2e, and STAT 545
