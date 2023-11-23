@@ -50,8 +50,7 @@ The course will run for 6 weekends.
     -   **Programming Language Core**: R
     -   **Integrated Development Environment (IDE)**: RStudio
     -   **R extensions**: Packages (or libraries)
-<<<<<<< HEAD
-=======
+
 
 ## Course Resources
 
@@ -59,7 +58,7 @@ The course will run for 6 weekends.
 -   [GitHub Repository](https://github.com/asolisc/data-science-for-finance)
 -   [Main Book: R for Data Science (2e)](https://r4ds.hadley.nz/)
 
->>>>>>> fc6af5758495097df94563f421eb3c0a156fc68c
+
 
 ## What is R?
 
@@ -144,9 +143,7 @@ Locate Preferences (on Mac, this is in the RStudio menu; for Windows, go to Tool
 
 ![](https://rladiessydney.org/img/settings.jpg)
 
-<<<<<<< HEAD
-# RStudio Options
-=======
+
 
 # RStudio Themes and Fonts
 Type and run the following code into 
@@ -227,5 +224,6 @@ Para la intro:
 
 # Coding Basics
 
+
 <From R4DS 2e, and STAT 545
->>>>>>> fc6af5758495097df94563f421eb3c0a156fc68c
+
