@@ -50,7 +50,6 @@ The course will run for 6 weekends.
     -   **Programming Language Core**: R
     -   **Integrated Development Environment (IDE)**: RStudio
     -   **R extensions**: Packages (or libraries)
-    
 
 ## What is R?
 
@@ -60,12 +59,11 @@ R was conceived in 1992 by **Ross Ihaka** and **Robert Gentleman** as an open so
 
 Since its release in 1995, R has outgrown its original purpose and is now super versatile. It can, among other things help you to:
 
-- run statistical analysis and data workflows
-- design incredible, publication-ready visualizations
-- generate automated reports
-- create web applications
-- Create presentation slides, books, and even entire websites!
-
+-   run statistical analysis and data workflows
+-   design incredible, publication-ready visualizations
+-   generate automated reports
+-   create web applications
+-   Create presentation slides, books, and even entire websites!
 
 ## Course Resources
 
@@ -78,19 +76,19 @@ Since its release in 1995, R has outgrown its original purpose and is now super 
 Pros:
 
 -   Unparalleled data manipulation libraries based on *tidy* principles ![](https://raw.githubusercontent.com/rstudio/hex-stickers/master/PNG/dplyr.png){.absolute top="235" left="1510" width="250"} ![](https://raw.githubusercontent.com/rstudio/hex-stickers/master/PNG/tidyr.png){.absolute top="685" left="990" width="250"} <br />
-- Cohesive and intuitive plotting ecosystem
-- Machine learning with *tidy* principles
-- free, open source, and platform-independent.
-- wide range of dedicated packages provide extra functionality
-- strong capabilities for data analysis and visualization
-- huge (and open) online community
-- given its focus on functions, it offers an easy transition into code (especially when coming from an Excel background)
+-   Cohesive and intuitive plotting ecosystem
+-   Machine learning with *tidy* principles
+-   free, open source, and platform-independent.
+-   wide range of dedicated packages provide extra functionality
+-   strong capabilities for data analysis and visualization
+-   huge (and open) online community
+-   given its focus on functions, it offers an easy transition into code (especially when coming from an Excel background)
 
 Cons:
 
-- performance: scalability, memory and speed
-- steep learning curve (as likely any programming language)
-- often experienced as strange to code (from a programmer perspective)
+-   performance: scalability, memory and speed
+-   steep learning curve (as likely any programming language)
+-   often experienced as strange to code (from a programmer perspective)
 
 # R vs. RStudio
 
@@ -98,52 +96,46 @@ Cons:
 
 ![](https://hips.hearstapps.com/hmg-prod/amv-prod-cad-assets/wp-content/uploads/2016/06/2016-Mini-John-Cooper-Works-Challenge-117.jpg?resize=780:*)
 
-
-- **RStudio** is an open-source IDE (Integrated Development Environment) for R
-- Most popular IDE
-- Many features + extensions to facilitate data science workflows
-- Multi-lingual IDE + customizable
+-   **RStudio** is an open-source IDE (Integrated Development Environment) for R
+-   Most popular IDE
+-   Many features + extensions to facilitate data science workflows
+-   Multi-lingual IDE + customizable
 
 # Installing R
+
 ![](https://discdown.org/rprogramming/images/02/02_R_cran.jpg)
 
-- Visit [this link to download both R and RStudio Desktop](https://posit.co/download/rstudio-desktop/)
-- Click on the button to your left and visit the Comprehensive R Archive Network (CRAN).
-- Click on the link that corresponds to your computer's OS.
-- Once downloaded, follow the instructions from the .exe file.
-- You can watch [this walk through](https://www.youtube.com/watch?v=YrEe2TLr3MI) if you are having any trouble with installation.
-
-
+-   Visit [this link to download both R and RStudio Desktop](https://posit.co/download/rstudio-desktop/)
+-   Click on the button to your left and visit the Comprehensive R Archive Network (CRAN).
+-   Click on the link that corresponds to your computer's OS.
+-   Once downloaded, follow the instructions from the .exe file.
+-   You can watch [this walk through](https://www.youtube.com/watch?v=YrEe2TLr3MI) if you are having any trouble with installation.
 
 # Installing RStudio
-Visit the [this link to download RStudio Desktop](https://posit.co/download/rstudio-desktop/)
-![](img/setup/posit-rstudio-download.png)
-- Click on the button to your right and an .exe file will download. Follow the instruction from the .exe file.
+
+Visit the [this link to download RStudio Desktop](https://posit.co/download/rstudio-desktop/) ![](img/setup/posit-rstudio-download.png) - Click on the button to your right and an .exe file will download. Follow the instruction from the .exe file.
 
 # Installing RTools (only for Windows OS)
-- Visit [this link to download RTools](https://cran.r-project.org/bin/windows/Rtools/)
-- Click on the link that corresponds to your R version (most probably Rtools 4.3)
-- Download the .exe and install it.
 
+-   Visit [this link to download RTools](https://cran.r-project.org/bin/windows/Rtools/)
+-   Click on the link that corresponds to your R version (most probably Rtools 4.3)
+-   Download the .exe and install it.
 
 # RStudio Tour
+
 ![](https://rladiessydney.org/img/quadrants.jpg)
 
-- Q1 - contains: script, data, command to run script
-- Q2 - contains: console
-- Q3 - contains: environment
-- Q4 - contains: files, plots, packages, help
+-   Q1 - contains: script, data, command to run script
+-   Q2 - contains: console
+-   Q3 - contains: environment
+-   Q4 - contains: files, plots, packages, help
 
 # RStudio Settings
 
 Some people like Rstudio to remember stuff from session to session. We think this is dangerous. So to avoid future hassle, we recommend that you change two settings.
 
-Locate Preferences (on Mac, this is in the RStudio menu; for Windows, go to Tools > Global Options). In the General tab, uncheck “Restore .RData…” and select “never” for “Save workspace…”
+Locate Preferences (on Mac, this is in the RStudio menu; for Windows, go to Tools \> Global Options). In the General tab, uncheck "Restore .RData..." and select "never" for "Save workspace..."
 
 ![](https://rladiessydney.org/img/settings.jpg)
 
-
 # RStudio Options
-
-
-

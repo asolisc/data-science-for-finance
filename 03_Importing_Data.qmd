@@ -24,12 +24,15 @@ Let's import daily prices of the S&P500, NASDAQ, DJIA, and IPC:
 
 ```{r}
 library(readxl)
+excel_sheets("data/xl/daily.xlsx")
+
 SP_daily <- read_excel("data/xl/daily.xlsx")
-NASDAQ_daily <- read_excel("data/xl/daily.xlsx",2)
+NASDAQ_daily <- read_excel("data/xl/daily.xlsx","NASDAQ")
 DJIA_daily <- read_excel("data/xl/daily.xlsx",3)
 IPC_daily <- read_excel("data/xl/daily.xlsx",4)
 
 head(SP_daily) 
+glimpse(SP_daily)
 head(IPC_daily)    
 
 ```
