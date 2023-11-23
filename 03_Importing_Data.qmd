@@ -2,7 +2,7 @@
 title: "03_Importing_Data"
 ---
 
-3.1 Introduction
+## 3.1 Introduction
 
 This chapter will teach you the basics of bringing data files into R. Specifically, it will focus on reading plain-text rectangular files. You'll get practical advice on handling things like column names, types, and missing data. You'll also learn about reading data from multiple files and writing data from R to a file. Finally, you'll learn how to create data frames in R. In this chapter, you'll learn how to load flat files in R using the readr package, which is a part of the core tidyverse.
 
@@ -16,7 +16,7 @@ library(tidyverse)
 
 ```
 
-3.2 Read data from Excel Files:
+## 3.2 Read data from Excel Files:
 
 To read Excel Files we'll need to install the library "readxl".
 
@@ -37,37 +37,81 @@ head(IPC_daily)
 
 ```
 
-3.3 Reading Data from a CSV file
+## 3.3 Reading Data from a CSV file
 
 Now we'll focus on the most common rectangular data file type: CSV, which is short for comma-separated values. Here is what a simple CSV file looks like. The first row, commonly called the header row, gives the column names, and the following six rows provide the data. The columns are separated, aka delimited, by commas.
 
 ```         
-Student ID,Full Name,favourite.food,mealPlan,AGE
-1,Sunil Huffmann,Strawberry yoghurt,Lunch only,4
-2,Barclay Lynn,French fries,Lunch only,5
-3,Jayendra Lyne,N/A,Breakfast and lunch,7
-4,Leon Rossini,Anchovies,Lunch only,
-5,Chidiegwu Dunkel,Pizza,Breakfast and lunch,five
-6,Güvenç Attila,Ice cream,Lunch only,6
+Symbol, Name, Sector
+1. A, Agilent Technologies Inc, Health Care
+2. AAL, American Airlines Group, Industrials
+3. AAP, Advance Auto Parts, Consumer Discretionary
+4. AAPL, Apple Inc., Information Technology
+5. ABBV, AbbVie Inc., Health Care
 ```
 
 We can read this file into R using [`read_csv()`](https://readr.tidyverse.org/reference/read_delim.html). The first argument is the most important: the path to the file. You can think about the path as the address of the file: the file is called `students.csv` and that it lives in the `data` folder.
 
 ```{r}
 library(read_csv)
-students <- read_csv("data/students.csv")
-students <- read_csv("https://pos.it/r4ds-students-csv")
-head(students)
+Tickers <- read_csv("https://gist.github.com/ZeccaLehn/f6a2613b24c393821f81c0c1d23d4192")
+head(Tickers)
+Tickers2 <- read_csv("CSV_Lalo/SP500_NA.csv")
+head(Tickers2)
 ```
 
-3.4 Reading Data from Yahoo Finance
+### 3.3.1 Some Clean up
+
+-   NAs
+
+In the `Symbol` column, there are a bunch of Symbols items, and then the character string `N/A`, which should have been a real `NA` that R will recognize as \"not available\". This is something we can address using the `na` argument. By default, [`read_csv()`](https://readr.tidyverse.org/reference/read_delim.html) only recognizes empty strings (`""`) in this dataset as `NA`s, we want it to also recognize the character string `"N/A"`.
+
+```{r}
+head(Tickers2)
+Tickers2 <- read_csv("CSV_Lalo/SP500_NA.csv", na = c("N/A", ""))
+head(Tickers2)
+tail(Tickers2)
+Tickers2
+```
+
+-   Names of Variables.
+
+You might also notice that the `Company Name`column is surrounded by backticks. That\'s because they contain spaces, breaking R\'s usual rules for variable names; they\'re **non-syntactic** names. To refer to these variables, you need to surround them with backticks, `` ` ``. Instead of space names should have \_.
+
+```{r}
+names(Tickers2)
+Tickers2 |> 
+  rename(
+    Company_Name = `Company Name`
+  )
+names(Tickers2)
+
+```
+
+An alternative approach is to use [`janitor::clean_names()`](https://sfirke.github.io/janitor/reference/clean_names.html) to use some heuristics to turn them all into snake case at once^[1](https://r4ds.hadley.nz/data-import#fn1)^. It's always better to type the names of columns in small letters and with \_ instead of space " ".
+
+```{r}
+Tickers2 |> janitor::clean_names()
+
+```
+
+-   Variable Types
+
+    Another common task after reading in data is to consider variable types. For example, `sector` is a categorical variable with a known set of possible values, which in R should be represented as a factor:
+
+```{r}
+Tickers2 |>
+  janitor::clean_names() |>
+  mutate(sector = factor(sector))
+
+```
+
+## 3.4 Reading Data from Yahoo Finance
 
 You can use the **`quantmod`** package in R to retrieve stock market data from Yahoo Finance. Make sure you have the package installed. You can install it using **`install.packages("quantmod")`** if you haven't already. Here's an example of how to retrieve daily prices for the S&P 500 index from Yahoo Finance:
 
 ```{r}
 # Load required libraries
-
-install.packages("quantmod")
 library(quantmod)
 
 # Define the ticker symbol for the S&P 500 index
@@ -87,8 +131,10 @@ head(GSPC)
 
 This script fetches the daily prices of the S&P 500 index from Yahoo Finance starting from the specified start date up to the current date. You can customize the **`start_date`** and **`end_date`** variables to specify the time range for which you want to retrieve the data. The **`head(GSPC)`** function is used to display the first few rows of the retrieved data.
 
+We can also use a more updated library for this:
+
 ```{r}
-install.packages('yfR')
+
 library(yfR)
 library(lubridate) # for date manipulations
 library(dplyr) # for data manipulations
@@ -104,5 +150,15 @@ df_yf <- yf_get(tickers = my_ticker,
                 last_date = last_date)
 
 # output is a tibble with data
+```
+
+3.4.1 Practical Advice
+
+Once you read data in, the first step usually involves transforming it in some way to make it easier to work with in the rest of your analysis. Let\'s take another look at the `Prices of ^GSPC`with that in mind.
+
+```{r}
+head(df_yf)
 glimpse(df_yf)
+df_yf |> janitor::clean_names()
+
 ```
