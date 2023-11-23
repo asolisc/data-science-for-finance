@@ -53,8 +53,7 @@ Symbol, Name, Sector
 We can read this file into R using [`read_csv()`](https://readr.tidyverse.org/reference/read_delim.html). The first argument is the most important: the path to the file. You can think about the path as the address of the file: the file is called `students.csv` and that it lives in the `data` folder.
 
 ```{r}
-library(read_csv)
-Tickers <- read_csv("https://gist.github.com/ZeccaLehn/f6a2613b24c393821f81c0c1d23d4192")
+Tickers <- read_csv("https://gist.githubusercontent.com/ZeccaLehn/f6a2613b24c393821f81c0c1d23d4192/raw/fe4638cc5561b9b261225fd8d2a9463a04e77d19/SP500.csv")
 head(Tickers)
 Tickers2 <- read_csv("CSV_Lalo/SP500_NA.csv")
 head(Tickers2)
@@ -64,7 +63,7 @@ head(Tickers2)
 
 -   NAs
 
-In the `Symbol` column, there are a bunch of Symbols items, and then the character string `N/A`, which should have been a real `NA` that R will recognize as \"not available\". This is something we can address using the `na` argument. By default, [`read_csv()`](https://readr.tidyverse.org/reference/read_delim.html) only recognizes empty strings (`""`) in this dataset as `NA`s, we want it to also recognize the character string `"N/A"`.
+In the `Symbol` column, there are a bunch of Symbols items, and then the character string `N/A`, which should have been a real `NA` that R will recognize as "not available". This is something we can address using the `na` argument. By default, [`read_csv()`](https://readr.tidyverse.org/reference/read_delim.html) only recognizes empty strings (`""`) in this dataset as `NA`s, we want it to also recognize the character string `"N/A"`.
 
 ```{r}
 head(Tickers2)
@@ -76,7 +75,7 @@ Tickers2
 
 -   Names of Variables.
 
-You might also notice that the `Company Name`column is surrounded by backticks. That\'s because they contain spaces, breaking R\'s usual rules for variable names; they\'re **non-syntactic** names. To refer to these variables, you need to surround them with backticks, `` ` ``. Instead of space names should have \_.
+You might also notice that the `Company Name`column is surrounded by backticks. That's because they contain spaces, breaking R's usual rules for variable names; they're **non-syntactic** names. To refer to these variables, you need to surround them with backticks, `` ` ``. Instead of space names should have \_.
 
 ```{r}
 names(Tickers2)
@@ -91,7 +90,8 @@ names(Tickers2)
 An alternative approach is to use [`janitor::clean_names()`](https://sfirke.github.io/janitor/reference/clean_names.html) to use some heuristics to turn them all into snake case at once^[1](https://r4ds.hadley.nz/data-import#fn1)^. It's always better to type the names of columns in small letters and with \_ instead of space " ".
 
 ```{r}
-Tickers2 |> janitor::clean_names()
+Tickers2 |> janitor::clean_names() 
+#Cmd+Shift+M
 
 ```
 
@@ -154,7 +154,7 @@ df_yf <- yf_get(tickers = my_ticker,
 
 3.4.1 Practical Advice
 
-Once you read data in, the first step usually involves transforming it in some way to make it easier to work with in the rest of your analysis. Let\'s take another look at the `Prices of ^GSPC`with that in mind.
+Once you read data in, the first step usually involves transforming it in some way to make it easier to work with in the rest of your analysis. Let's take another look at the `Prices of ^GSPC`with that in mind.
 
 ```{r}
 head(df_yf)
