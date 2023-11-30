@@ -97,14 +97,17 @@ website:
       
       - section: "11. Quarto"
           
-          
-      
-      
       
   navbar:
+    background: "#FFEDC2"
+    # logo: "img/"
     left:
-      - href: index.qmd
-        text: Home
+      - text: Sessions
+        menu: 
+          - text: Importing Data
+            href: "03_Importing_Data.qmd"
+      - text: Home
+        href: index.qmd
       - about.qmd
       
 
