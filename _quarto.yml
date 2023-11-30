@@ -36,18 +36,19 @@ website:
 
           
       - section: "3. Importing Data"
-        contents:
-          - "Feeding data into R"
-          - "Reading data from a file"
-          - "Absolute vs. relative paths"
-          - "Controlling column types"
-          - "Reading data from multiple files"
-          - "Writing to a file"
-          - "Writing to the clipboard"
-          - "Writing to Excel"
-          - "Data entry (use DataPasta add-on)"
-          - "Importing financial data using yfR"
-          - "Importing data from APIs?"
+        href: 03_Importing_Data.qmd
+        # contents:
+        #   - "Feeding data into R"
+        #   - "Reading data from a file"
+        #   - "Absolute vs. relative paths"
+        #   - "Controlling column types"
+        #   - "Reading data from multiple files"
+        #   - "Writing to a file"
+        #   - "Writing to the clipboard"
+        #   - "Writing to Excel"
+        #   - "Data entry (use DataPasta add-on)"
+        #   - "Importing financial data using yfR"
+        #   - "Importing data from APIs?"
           
       - section: "4. Data manipulation"
         contents:
@@ -109,6 +110,8 @@ website:
       - text: Home
         href: index.qmd
       - about.qmd
+      - href: 03_Importing_Data.qmd
+        text: Importing Data
       
 
 
