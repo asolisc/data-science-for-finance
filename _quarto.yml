@@ -4,114 +4,145 @@ project:
 website:
   title: "Data Science for Finance"
   
-  sidebar: 
-    style: docked
-    search: true
-    contents: 
-      - section: "0. Pre-work"
-        contents:
-          - "Install R and R Studio"
-          - "Installing R Packages"
-          - "RStudio Important Options (e.g. rainbow parentheses, not saving .Rdata, etc.)"
-          - "Customizing your RStudio"
-          
-      - section: "1. Introduction"
-        contents:
-          - "Why R and not just Excel for Finance?"
-          - "Challenge (R vs. Excel)"
-          - "Why data science for finance? (A story of three funds)"
-          - "Why “A Tidy Introduction”? What is the tidyverse?"
-          - "R Coding Basics: R basics and workflows"
-          - "Downloading course materials and RStudio projects"
-          - "Datasets for this course"
-          - "Whole game"
-          
-      - section: "2. Workflows"
-        contents:
-          - "RProjects"
-          - "Console vs. scripts"
-          - "Scripts vs. Quarto"
-          - "Getting help"
-          - "ChatGPT vs. Stackoverflow"
-
-          
-      - section: "3. Importing Data"
-        href: 03_Importing_Data.qmd
-        # contents:
-        #   - "Feeding data into R"
-        #   - "Reading data from a file"
-        #   - "Absolute vs. relative paths"
-        #   - "Controlling column types"
-        #   - "Reading data from multiple files"
-        #   - "Writing to a file"
-        #   - "Writing to the clipboard"
-        #   - "Writing to Excel"
-        #   - "Data entry (use DataPasta add-on)"
-        #   - "Importing financial data using yfR"
-        #   - "Importing data from APIs?"
-          
-      - section: "4. Data manipulation"
-        contents:
-          - "Introduction to dplyr"
-          - "Working with columns"
-          - "The magrittr pipe"
-          - "The base R pipe"
-          - "Groups and summarising"
-          - "reframe() and mutate() with groups"
-          - "Case Study"
-          
-      - section: "5.  Data transformation"
-        contents:
-          - "Logical vectors"
-          - "Numbers"
-          - "Strings"
-          - "Regular expressions"
-          - "Factors"
-          - "Dates and times"
-          - "Missing values"
-          - "Joins"
-          
-      - section: "6. Data visualization"
-        contents:
-          - "qplot()"
-          - "Intro: ggplot2 and the grammar of graphics"
-          - "Grammar"
-          - "Layers"
-          - "Polish"
-          - "Annotation"
-          - "Multipanel"
-          - "Exploratory Data Analysis for Finance"
-          - "Intro to “Fin data viz”"
-          
-      - section: "7. Data tidying"
-        contents:
-          - "What is tidy data?"
-          - "Why tidying data matters?"
-          - "Lengthening data"
-          - "Widening data"
-          
-      - section: "8. Programming I: Functions"
-      
-      - section: "9. Programming II: Iteration"
-      
-      - section: "10. Programming III: Base R"
-      
-      - section: "11. Quarto"
+  # sidebar: 
+  #   style: docked
+  #   search: true
+    # contents: 
+      # - section: "0. Pre-work"
+      #   contents:
+      #     - "Install R and R Studio"
+      #     - "Installing R Packages"
+      #     - "RStudio Important Options (e.g. rainbow parentheses, not saving .Rdata, etc.)"
+      #     - "Customizing your RStudio"
+      #     
+      # - section: "1. Introduction"
+      #   contents:
+      #     - "Why R and not just Excel for Finance?"
+      #     - "Challenge (R vs. Excel)"
+      #     - "Why data science for finance? (A story of three funds)"
+      #     - "Why “A Tidy Introduction”? What is the tidyverse?"
+      #     - "R Coding Basics: R basics and workflows"
+      #     - "Downloading course materials and RStudio projects"
+      #     - "Datasets for this course"
+      #     - "Whole game"
+      #     
+      # - section: "2. Workflows"
+      #   contents:
+      #     - "RProjects"
+      #     - "Console vs. scripts"
+      #     - "Scripts vs. Quarto"
+      #     - "Getting help"
+      #     - "ChatGPT vs. Stackoverflow"
+      # 
+      #     
+      # - section: "3. Importing Data"
+      #   href: 03_Importing_Data.qmd
+      #   # contents:
+      #   #   - "Feeding data into R"
+      #   #   - "Reading data from a file"
+      #   #   - "Absolute vs. relative paths"
+      #   #   - "Controlling column types"
+      #   #   - "Reading data from multiple files"
+      #   #   - "Writing to a file"
+      #   #   - "Writing to the clipboard"
+      #   #   - "Writing to Excel"
+      #   #   - "Data entry (use DataPasta add-on)"
+      #   #   - "Importing financial data using yfR"
+      #   #   - "Importing data from APIs?"
+      #     
+      # - section: "4. Data manipulation"
+      #   contents:
+      #     - "Introduction to dplyr"
+      #     - "Working with columns"
+      #     - "The magrittr pipe"
+      #     - "The base R pipe"
+      #     - "Groups and summarising"
+      #     - "reframe() and mutate() with groups"
+      #     - "Case Study"
+      #     
+      # - section: "5.  Data transformation"
+      #   contents:
+      #     - "Logical vectors"
+      #     - "Numbers"
+      #     - "Strings"
+      #     - "Regular expressions"
+      #     - "Factors"
+      #     - "Dates and times"
+      #     - "Missing values"
+      #     - "Joins"
+      #     
+      # - section: "6. Data visualization"
+      #   contents:
+      #     - "qplot()"
+      #     - "Intro: ggplot2 and the grammar of graphics"
+      #     - "Grammar"
+      #     - "Layers"
+      #     - "Polish"
+      #     - "Annotation"
+      #     - "Multipanel"
+      #     - "Exploratory Data Analysis for Finance"
+      #     - "Intro to “Fin data viz”"
+      #     
+      # - section: "7. Data tidying"
+      #   contents:
+      #     - "What is tidy data?"
+      #     - "Why tidying data matters?"
+      #     - "Lengthening data"
+      #     - "Widening data"
+      #     
+      # - section: "8. Programming I: Functions"
+      # 
+      # - section: "9. Programming II: Iteration"
+      # 
+      # - section: "10. Programming III: Base R"
+      # 
+      # - section: "11. Quarto"
           
       
   navbar:
     background: "#FFEDC2"
     # logo: "img/"
     left:
+      - text: Course Info
+        menu: 
+          - text: Prework
+            href: "03_Importing_Data.qmd"
+          - text: Schedule
+            href: "03_Importing_Data.qmd"
+          - text: Meet the Team
+            href: "03_Importing_Data.qmd"
+            
       - text: Sessions
         menu: 
-          - text: Importing Data
+          - text: 1. Introduction to the `tidyverse`
             href: "03_Importing_Data.qmd"
-      - text: Home
-        href: index.qmd
-      - about.qmd
-      - href: 03_Importing_Data.qmd
-        text: Importing Data
+          - text: 2. Importing Data
+            href: "03_Importing_Data.qmd"
+          - text: 3. Data Manipulation
+            href: "03_Importing_Data.qmd"
+          - text: 4. Data Visualization
+            href: "03_Importing_Data.qmd"
+          - text: 5. Tidy Data
+            href: "03_Importing_Data.qmd"
+          - text: 6. Creating Functions
+            href: "03_Importing_Data.qmd"
+          - text: 7. Iteration
+            href: "03_Importing_Data.qmd"
+          - text: 8. Quarto
+            href: "03_Importing_Data.qmd"
+          - text: 9. Wrap Up
+            href: "03_Importing_Data.qmd"
+        
+    right: 
+      - icon: download
+        text: Downloads
+        menu:
+          - text: All Course Materials
+            href: downloads/course_materials.zip
+          - text: Data Sets
+            href: downloads/course_materials.zip
+          - text: Font Files
+            href: downloads/course_materials.zip
       
 
 

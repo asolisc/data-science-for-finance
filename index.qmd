@@ -1,14 +1,39 @@
 ---
-title: "R for Data Science"
+title: "<i style='font-family:Literata;font-size:2.75rem;font-weight:800;line-height:.9;'>Data Science for Finance</i>"
 ---
 
-This is a Quarto website.
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+A Workshop by Alexis Solis and Eduardo Carrillo
 
-```{r}
-1 + 1
-2+5
-```
+------------------------------------------------------------------------
 
-Hi!
+<span class='code'>📆 &ensp; Starts August 3 2024</span>\
+<span class='code'>⏰ &ensp;09:00 - 17:00</span>\
+<span class='code'>🏨 &ensp;ITAM Rio Hondo</span>\
+<span class='code'>✍️ &ensp;[rstd.io/conf](http://rstd.io/conf)</span>
+
+------------------------------------------------------------------------
+
+# Course Overview
+
+
+
+## Learning objectives
+
+-   Lorem ipsum
+-   Lorem ipsum
+-   Lorem ipsum
+-   Lorem ipsum
+
+## Is this course for me?
+
+This course will be appropriate for you if you answer yes to these questions:
+
+-   Do you aim to build graphics in a fully reproducible way without the need to manually adjust details afterwards?
+
+-   Do you enjoy using the {ggplot2} package but are interested in doing more with it?
+
+-   Would you like to learn how to improve future data visualizations in terms of accessibility, impact, and complexity?
+
+
+# Instructor
