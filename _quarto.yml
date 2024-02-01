@@ -100,7 +100,7 @@ website:
           
       
   navbar:
-    background: "#FFEDC2"
+    background: "#0018a8"
     # logo: "img/"
     left:
       - text: Course Info
@@ -144,7 +144,6 @@ website:
           - text: Font Files
             href: downloads/course_materials.zip
       
-
 
 format:
   html:

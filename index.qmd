@@ -1,5 +1,5 @@
 ---
-title: "<i style='font-family:Literata;font-size:2.75rem;font-weight:800;line-height:.9;'>Data Science for Finance</i>"
+title: "<h1 style='font-family:Petrona;font-size:4.5rem;font-weight:500;line-height:.9;color: #0018a8'>Data Science for Finance</h1>"
 ---
 
 
