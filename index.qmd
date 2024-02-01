@@ -2,21 +2,18 @@
 title: "<h1 style='font-family:Petrona;font-size:4.5rem;font-weight:500;line-height:.9;color: #0018a8'>Data Science for Finance</h1>"
 ---
 
-
-A Workshop by Alexis Solis and Eduardo Carrillo
+A workshop by Alexis Solis and Eduardo Carrillo
 
 ------------------------------------------------------------------------
 
-<span class='code'>📆 &ensp; Starts August 3 2024</span>\
-<span class='code'>⏰ &ensp;09:00 - 17:00</span>\
-<span class='code'>🏨 &ensp;ITAM Rio Hondo</span>\
-<span class='code'>✍️ &ensp;[rstd.io/conf](http://rstd.io/conf)</span>
+[📆   Starts August 3 2024]{.code}\
+[⏰  09:00 - 17:00]{.code}\
+[🏨  ITAM Rio Hondo]{.code}\
+[✍️  [rstd.io/conf](http://rstd.io/conf)]{.code}
 
 ------------------------------------------------------------------------
 
 # Course Overview
-
-
 
 ## Learning objectives
 
@@ -34,6 +31,5 @@ This course will be appropriate for you if you answer yes to these questions:
 -   Do you enjoy using the {ggplot2} package but are interested in doing more with it?
 
 -   Would you like to learn how to improve future data visualizations in terms of accessibility, impact, and complexity?
-
 
 # Instructor
