@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.3.353">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -55,8 +55,7 @@ ul.task-list li input[type="checkbox"] {
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
+    "search-submit-button-title": "Submit"
   }
 }</script>
 
@@ -187,7 +186,12 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning objectives</a></li>
   <li><a href="#is-this-course-for-me" id="toc-is-this-course-for-me" class="nav-link" data-scroll-target="#is-this-course-for-me">Is this course for me?</a></li>
   </ul></li>
-  <li><a href="#instructor" id="toc-instructor" class="nav-link" data-scroll-target="#instructor">Instructor</a></li>
+  <li><a href="#instructors" id="toc-instructors" class="nav-link" data-scroll-target="#instructors">Instructors</a></li>
+  <li><a href="#prework" id="toc-prework" class="nav-link" data-scroll-target="#prework">Prework</a>
+  <ul class="collapse">
+  <li><a href="#required-packages" id="toc-required-packages" class="nav-link" data-scroll-target="#required-packages">Required Packages</a></li>
+  <li><a href="#required-typefaces" id="toc-required-typefaces" class="nav-link" data-scroll-target="#required-typefaces">Required Typefaces</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -196,7 +200,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"></h1><h1 style="font-family:Petrona;font-size:4.5rem;font-weight:500;line-height:.9;color: #0018a8"><br>
+<h1 class="title"></h1><h1 style="font-family:Petrona;font-size:4.5rem;font-weight:500;line-height:.9"><br>
 Data Science for Finance<br>
 </h1>
 </div>
@@ -225,26 +229,97 @@ Data Science for Finance<br>
 <section id="learning-objectives" class="level2">
 <h2 class="anchored" data-anchor-id="learning-objectives">Learning objectives</h2>
 <ul>
-<li>Lorem ipsum</li>
-<li>Lorem ipsum</li>
-<li>Lorem ipsum</li>
-<li>Lorem ipsum</li>
+<li><strong>Navigating RStudio and the tidyverse for financial analytics</strong>: Grasp R basics, project management, and data manipulation for financial insights.</li>
+<li><strong>Advanced data manipulation with dplyr</strong>: Master efficient data handling, focusing on financial datasets for actionable insights.</li>
+<li><strong>Creating sophisticated financial visualizations</strong>: Learn ggplot2 essentials, customization techniques, and visualization best practices.</li>
+<li><strong>Applying R programming to finance</strong>: Develop skills in function writing, iteration, and comprehensive financial analysis reporting.</li>
 </ul>
 </section>
 <section id="is-this-course-for-me" class="level2">
 <h2 class="anchored" data-anchor-id="is-this-course-for-me">Is this course for me?</h2>
 <p>This course will be appropriate for you if you answer yes to these questions:</p>
 <ul>
-<li><p>Do you aim to build graphics in a fully reproducible way without the need to manually adjust details afterwards?</p></li>
-<li><p>Do you enjoy using the {ggplot2} package but are interested in doing more with it?</p></li>
-<li><p>Would you like to learn how to improve future data visualizations in terms of accessibility, impact, and complexity?</p></li>
+<li>Do you have a keen interest in finance and want to learn how to analyze financial data using R?</li>
+<li>Are you looking to enhance your data manipulation skills with a focus on financial datasets?</li>
+<li>Do you wish to create engaging and sophisticated financial visualizations without relying on external post-processing tools?</li>
+<li>Are you eager to apply programming concepts directly to finance, developing your ability to generate comprehensive reports and insights?</li>
 </ul>
 </section>
 </section>
-<section id="instructor" class="level1">
-<h1>Instructor</h1>
+<section id="instructors" class="level1">
+<h1>Instructors</h1>
+<p><img src="img/overview/selfie.png" class="img-fluid" style="float:right;padding: 0 0 0 10px;" alt="Headshot of MSc. Alexis Solis" width="200"></p>
+<p>I’m a M.Sc. in Data Science and B.Sc. in Finance working a full-time job as a Senior Data Scientist at GBM. My research interests include applications of data science processes and machine learning in finance. I work in the Data Science &amp; Strategy team and develop novel data mining methods to extract actionable investment ideas.</p>
+<p>🎓 Education</p>
+<p>⭐ M.Sc. in Data Science • ITAM • 2018–2020</p>
+<p>⭐ B.Sc. in Finance • ITAM • 2011–2016</p>
+</section>
+<section id="prework" class="level1">
+<h1>Prework</h1>
+<p>The workshop will also cover the basic logic of ggplot2 and its components. However, some pre-knowledge on how the package works is beneficial for following the examples and for the group exercises. A good overview is provided might by the “First Steps” chapter of the ggplot2 book by Hadley Wickham et al.: <a href="https://ggplot2-book.org/getting-started.html">ggplot2-book.org/getting-started.html</a></p>
+<p>The example codes and the hands-on workshop parts are run in the RStudio cloud. Thus, nothing but a laptop is needed.</p>
+<p>If you want to run the workshop content locally on your machine, please make sure to install a suitable IDE (RStudio, VS Code or others), a recent version of R (4.1+) and the following packages and typefaces.</p>
+<p><em>For Mac OS users:</em><br>
+Please make sure that <a href="https://www.xquartz.org/">XQuartz is installed</a> which is needed to use the cairo pdf device.</p>
+<section id="required-packages" class="level2">
+<h2 class="anchored" data-anchor-id="required-packages">Required Packages</h2>
+<ul>
+<li><strong>tidyverse packages and friends</strong>
+<ul>
+<li>ggplot2, readr, tibble, dplyr, tidyr, forcats, stringr, lubridate, here, systemfonts, scales</li>
+</ul></li>
+<li><strong>extension packages</strong>
+<ul>
+<li>ggrepel, ggforce, ggtext, ggdist, ggbeeswarm, gghalves, ggblur, patchwork</li>
+</ul></li>
+<li><strong>color packages</strong>
+<ul>
+<li>viridis, RColorBrewer, rcartocolor, scico, ggsci, ggthemes, nord, MetBrewer, colorspace, colorblindr</li>
+</ul></li>
+<li><strong>util packages</strong>
+<ul>
+<li>magick, grid, grDevices</li>
+</ul></li>
+<li><strong>data packages</strong>
+<ul>
+<li>palmerpenguins, rnaturalearth</li>
+</ul></li>
+<li><strong>financial packages</strong>
+<ul>
+<li>yfR, tidyquant</li>
+</ul></li>
+</ul>
+<p>Run this code to install the packages if needed:</p>
+<pre><code>packages &lt;- c(
+  "ggplot2", "readr", "tibble", "tidyr", "forcats", "stringr",
+  "lubridate", "here", "systemfonts", "magick", "scales", "grid",
+  "grDevices", "colorspace", "viridis", "RColorBrewer", "rcartocolor",
+  "scico", "ggsci", "ggthemes", "nord", "MetBrewer", "ggrepel",
+  "ggforce", "ggtext", "ggdist", "ggbeeswarm", "gghalves", "patchwork", 
+  "palmerpenguins", "rnaturalearth", "sf", "rmapshaper", "devtools"
+)
+
+install.packages(setdiff(packages, rownames(installed.packages())))  
+
+---- install {colorblindr} and requirements ----
+remotes::install_github("wilkelab/cowplot")
+remotes::install_github("clauswilke/colorblindr")</code></pre>
+</section>
+<section id="required-typefaces" class="level2">
+<h2 class="anchored" data-anchor-id="required-typefaces">Required Typefaces</h2>
+<p>We will make use of custom fonts. A lot.<br>
+If you want to follow all contents locally, make sure the following typefaces are installed:</p>
+<ul>
+<li>Roboto Condensed: <a href="www.fonts.google.com/specimen/Roboto+Condensed" target="_blank">fonts.google.com/specimen/Roboto+Condensed</a></li>
+<li>Cabinet Grotesk: <a href="www.fontshare.com/fonts/cabinet-grotesk" target="_blank">fontshare.com/fonts/cabinet-grotesk</a></li>
+<li>Tabular: <a href="www.fontshare.com/fonts/tabular" target="_blank">fontshare.com/fonts/tabular</a></li>
+<li>Boska: <a href="(www.fontshare.com/fonts/boska" target="_blank">fontshare.com/fonts/boska</a></li>
+<li>Pally: <a href="www.fontshare.com/fonts/pally" target="_blank">fontshare.com/fonts/pally</a></li>
+</ul>
+<p>You can download all typefaces as a single zip file <a href="ggplot2-course-fonts.zip">here</a>.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

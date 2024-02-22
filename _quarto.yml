@@ -100,7 +100,7 @@ website:
           
       
   navbar:
-    background: "#0018a8"
+    background: "#0D5C99"
     # logo: "img/"
     left:
       - text: Course Info
