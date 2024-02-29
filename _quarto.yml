@@ -106,7 +106,7 @@ website:
       - text: Course Info
         menu: 
           - text: Prework
-            href: "03_Importing_Data.qmd"
+            href: "00_Prework.qmd"
           - text: Schedule
             href: "03_Importing_Data.qmd"
           - text: Meet the Team

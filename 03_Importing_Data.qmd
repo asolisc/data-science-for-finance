@@ -29,11 +29,11 @@ excel_sheets("data/xl/daily.xlsx")
 SP_daily <- read_excel("data/xl/daily.xlsx")
 NASDAQ_daily <- read_excel("data/xl/daily.xlsx","NASDAQ")
 DJIA_daily <- read_excel("data/xl/daily.xlsx",3)
-IPC_daily <- read_excel("data/xl/daily.xlsx",4)
+#IPC_daily <- read_excel("data/xl/daily.xlsx",4)
 
 head(SP_daily) 
 glimpse(SP_daily)
-head(IPC_daily)    
+#head(IPC_daily)    
 
 ```
 
@@ -53,10 +53,10 @@ Symbol, Name, Sector
 We can read this file into R using [`read_csv()`](https://readr.tidyverse.org/reference/read_delim.html). The first argument is the most important: the path to the file. You can think about the path as the address of the file: the file is called `students.csv` and that it lives in the `data` folder.
 
 ```{r}
-Tickers <- read_csv("https://gist.github.com/ZeccaLehn/f6a2613b24c393821f81c0c1d23d4192")
+#Tickers <- read_csv("https://gist.github.com/ZeccaLehn/f6a2613b24c393821f81c0c1d23d4192")
 
-head(Tickers)
-Tickers2 <- read_csv("CSV_Lalo/SP500_NA.csv")
+#head(Tickers)
+Tickers2 <- read_csv("CSV_Lalo/SP500.csv")
 head(Tickers2)
 ```
 
@@ -68,7 +68,7 @@ In the `Symbol` column, there are a bunch of Symbols items, and then the charact
 
 ```{r}
 head(Tickers2)
-Tickers2 <- read_csv("CSV_Lalo/SP500_NA.csv", na = c("N/A", ""))
+Tickers2 <- read_csv("CSV_Lalo/SP500.csv", na = c("N/A", ""))
 head(Tickers2)
 tail(Tickers2)
 Tickers2
@@ -80,9 +80,9 @@ You might also notice that the `Company Name`column is surrounded by backticks. 
 
 ```{r}
 names(Tickers2)
-Tickers2 |> 
+Tickers2 <- Tickers2 |> 
   rename(
-    Company_Name = `Company Name`
+    Company_Name = `Name`
   )
 names(Tickers2)
 
@@ -110,25 +110,6 @@ Tickers2 |>
 ## 3.4 Reading Data from Yahoo Finance
 
 You can use the **`quantmod`** package in R to retrieve stock market data from Yahoo Finance. Make sure you have the package installed. You can install it using **`install.packages("quantmod")`** if you haven't already. Here's an example of how to retrieve daily prices for the S&P 500 index from Yahoo Finance:
-
-```{r}
-# Load required libraries
-library(quantmod)
-
-# Define the ticker symbol for the S&P 500 index
-ticker <- "^GSPC"  # This is the ticker symbol for the S&P 500
-
-# Set the start and end dates
-start_date <- as.Date("2020-01-01")
-end_date <- Sys.Date()
-
-# Use the getSymbols function to fetch the data
-getSymbols(ticker, src = "yahoo", from = start_date, to = end_date)
-
-# Print the data
-head(GSPC)
-
-```
 
 This script fetches the daily prices of the S&P 500 index from Yahoo Finance starting from the specified start date up to the current date. You can customize the **`start_date`** and **`end_date`** variables to specify the time range for which you want to retrieve the data. The **`head(GSPC)`** function is used to display the first few rows of the retrieved data.
 
