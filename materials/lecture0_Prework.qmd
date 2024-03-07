@@ -7,6 +7,7 @@ format:
     height: 1080
     width: 1920
     incremental: false
+    footer: "[Return to website](../lectures/00_Prework.html)"
 editor: visual
 # title-slide-attributes:
   # data-background-size: contain
@@ -53,7 +54,7 @@ The course will run for 6 weekends.
 
 ## Course Resources
 
--   [Course Website]()
+-   [Course Website](../index.html)
 -   [GitHub Repository](https://github.com/asolisc/data-science-for-finance)
 -   [Main Book: R for Data Science (2e)](https://r4ds.hadley.nz/)
 

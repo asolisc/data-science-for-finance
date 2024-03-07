@@ -1,0 +1,102 @@
+---
+title: "<h1 style='font-family:Petrona;font-size:4.5rem;font-weight:500;line-height:.9'>Data Science for Finance</h1>"
+---
+
+A workshop by Alexis Solis and Eduardo Carrillo
+
+------------------------------------------------------------------------
+
+[📆   Starts August 3 2024]{.code}\
+[⏰  09:00 - 17:00]{.code}\
+[🏨  ITAM Rio Hondo]{.code}\
+[✍️  [rstd.io/conf](http://rstd.io/conf)]{.code}
+
+------------------------------------------------------------------------
+
+# Course Overview
+
+## Learning objectives
+
+-   **Navigating RStudio and the tidyverse for financial analytics**: Grasp R basics, project management, and data manipulation for financial insights.
+-   **Advanced data manipulation with dplyr**: Master efficient data handling, focusing on financial datasets for actionable insights.
+-   **Creating sophisticated financial visualizations**: Learn ggplot2 essentials, customization techniques, and visualization best practices.
+-   **Applying R programming to finance**: Develop skills in function writing, iteration, and comprehensive financial analysis reporting.
+
+## Is this course for me?
+
+This course will be appropriate for you if you answer yes to these questions:
+
+-   Do you have a keen interest in finance and want to learn how to analyze financial data using R?
+-   Are you looking to enhance your data manipulation skills with a focus on financial datasets?
+-   Do you wish to create engaging and sophisticated financial visualizations without relying on external post-processing tools?
+-   Are you eager to apply programming concepts directly to finance, developing your ability to generate comprehensive reports and insights?
+
+# Instructors
+
+![](img/overview/selfie.png){style="float:right;padding: 0 0 0 10px;" fig-alt="Headshot of MSc. Alexis Solis" width="200"}
+
+I'm a M.Sc. in Data Science and B.Sc. in Finance working a full-time job as a Senior Data Scientist at GBM. My research interests include applications of data science processes and machine learning in finance. I work in the Data Science & Strategy team and develop novel data mining methods to extract actionable investment ideas.
+
+🎓 Education
+
+⭐ M.Sc. in Data Science • ITAM • 2018--2020
+
+⭐ B.Sc. in Finance • ITAM • 2011--2016
+
+# Prework
+
+The workshop will also cover the basic logic of ggplot2 and its components. However, some pre-knowledge on how the package works is beneficial for following the examples and for the group exercises. A good overview is provided might by the "First Steps" chapter of the ggplot2 book by Hadley Wickham et al.: [ggplot2-book.org/getting-started.html](https://ggplot2-book.org/getting-started.html)
+
+The example codes and the hands-on workshop parts are run in the RStudio cloud. Thus, nothing but a laptop is needed.
+
+If you want to run the workshop content locally on your machine, please make sure to install a suitable IDE (RStudio, VS Code or others), a recent version of R (4.1+) and the following packages and typefaces.
+
+*For Mac OS users:*\
+Please make sure that [XQuartz is installed](https://www.xquartz.org/) which is needed to use the cairo pdf device.
+
+## Required Packages
+
+-   **tidyverse packages and friends**
+    -   ggplot2, readr, tibble, dplyr, tidyr, forcats, stringr, lubridate, here, systemfonts, scales
+-   **extension packages**
+    -   ggrepel, ggforce, ggtext, ggdist, ggbeeswarm, gghalves, ggblur, patchwork
+-   **color packages**
+    -   viridis, RColorBrewer, rcartocolor, scico, ggsci, ggthemes, nord, MetBrewer, colorspace, colorblindr
+-   **util packages**
+    -   magick, grid, grDevices
+-   **data packages**
+    -   palmerpenguins, rnaturalearth
+-   **financial packages**
+    -   yfR, tidyquant
+
+Run this code to install the packages if needed:
+
+```         
+packages <- c(
+  "ggplot2", "readr", "tibble", "tidyr", "forcats", "stringr",
+  "lubridate", "here", "systemfonts", "magick", "scales", "grid",
+  "grDevices", "colorspace", "viridis", "RColorBrewer", "rcartocolor",
+  "scico", "ggsci", "ggthemes", "nord", "MetBrewer", "ggrepel",
+  "ggforce", "ggtext", "ggdist", "ggbeeswarm", "gghalves", "patchwork", 
+  "palmerpenguins", "rnaturalearth", "sf", "rmapshaper", "devtools"
+)
+
+install.packages(setdiff(packages, rownames(installed.packages())))  
+
+---- install {colorblindr} and requirements ----
+remotes::install_github("wilkelab/cowplot")
+remotes::install_github("clauswilke/colorblindr")
+```
+
+## Required Typefaces
+
+We will make use of custom fonts. A lot.\
+If you want to follow all contents locally, make sure the following typefaces are installed:
+
+-   Roboto Condensed: <a href='www.fonts.google.com/specimen/Roboto+Condensed' target="_blank">fonts.google.com/specimen/Roboto+Condensed</a>
+-   Cabinet Grotesk: <a href='www.fontshare.com/fonts/cabinet-grotesk' target="_blank">fontshare.com/fonts/cabinet-grotesk</a>
+-   Tabular: <a href='www.fontshare.com/fonts/tabular' target="_blank">fontshare.com/fonts/tabular</a>
+-   Boska: <a href='(www.fontshare.com/fonts/boska' target="_blank">fontshare.com/fonts/boska</a>
+-   Pally: <a href='www.fontshare.com/fonts/pally' target="_blank">fontshare.com/fonts/pally</a>
+
+You can download all typefaces as a single zip file [here](ggplot2-course-fonts.zip).

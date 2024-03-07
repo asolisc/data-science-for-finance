@@ -13,7 +13,6 @@ tbl-colwidths: [5,20,75]
 
 
 # Outline
-
 -   Welcome
     -   Install R and RStudio
     -   Installing R Packages
