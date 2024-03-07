@@ -9,15 +9,13 @@ tbl-colwidths: [5,20,75]
 ```{=html}
 <iframe class="slide-deck" src="../materials/00_Prework.html" height="420" width="747" style="border: 1px solid #2e3846;"></iframe>
 ```
-[View slides in full screen](../materials/00_Prework.html)
+[View slides in full screen](../materials/lecture0_Prework.html)
+
 
 # Outline
 
 -   Welcome
-    -   Meet the Team
-    -   Meat Each Other
-    -   Announcements
--   The {ggplot2} Package
-    -   Advantages of {ggplot2}
-    -   The {ggplot2} Showcase
-    -   A Motivational Example
+    -   Install R and RStudio
+    -   Installing R Packages
+    -   RStudio Important Options
+    -   Customizing your RStudio
