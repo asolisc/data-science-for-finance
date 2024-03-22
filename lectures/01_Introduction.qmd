@@ -1,0 +1,24 @@
+---
+title: "Introduction to the `tidyverse`"
+subtitle: "<span class='code'>09:00-09:30</span>"
+date: "2022-07-25"
+image: "images/session1.png"
+tbl-colwidths: [5,20,75]
+---
+
+```{=html}
+<iframe class="slide-deck" src="../materials/slides01_Introduction-to-the-tidyverse.html" height="420" width="747" style="border: 1px solid #2e3846;"></iframe>
+```
+[View slides in full screen](../materials/slides01_Introduction-to-the-tidyverse.html)
+
+
+# Outline
+-   Welcome
+    -  Why data science for finance? (A story of three funds) https://www.youtube.com/watch?v=TnPlET9mk0s&list=PL9qLtkRkGWLeh9UNptt_734t0u1zXz5wy&index=1&ab_channel=DukeCenterforComputationalThinking
+    - Why R and not just Excel for Finance?
+    - Challenge (R vs. Excel)
+    - Why “A Tidy Introduction”? What is the tidyverse?
+    - R Coding Basics: R basics and workflows
+    - Downloading course materials and RStudio projects.
+    - Datasets for this course.
+    - Whole game

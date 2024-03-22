@@ -9,10 +9,10 @@ tbl-colwidths: [5,20,75]
 ```{=html}
 <iframe class="slide-deck" src="../materials/00_Prework.html" height="420" width="747" style="border: 1px solid #2e3846;"></iframe>
 ```
-[View slides in full screen](../materials/lecture0_Prework.html)
-
+[View slides in full screen](../materials/slides00_Prework.html)
 
 # Outline
+
 -   Welcome
     -   Install R and RStudio
     -   Installing R Packages

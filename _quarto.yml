@@ -115,7 +115,7 @@ website:
       - text: Lectures
         menu: 
           - text: 1. Introduction to the `tidyverse`
-            href: "03_Importing_Data.qmd"
+            href: "lectures/01_Introduction.qmd"
           - text: 2. Importing Data
             href: "03_Importing_Data.qmd"
           - text: 3. Data Manipulation

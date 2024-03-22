@@ -1,0 +1,33 @@
+---
+# title: "Data Science for the Financial Analyst"
+format: 
+  revealjs:
+    # theme: "theme/quarto_theme.scss"
+    logo: "https://cryptologos.cc/logos/cardano-ada-logo.svg?v=023"
+    height: 1080
+    width: 1920
+    incremental: false
+    footer: "[Return to website](../lectures/01_Introduction.html)"
+# title-slide-attributes:
+  # data-background-size: contain
+  # data-background-image: "images/btc_candles.jpg"
+  # data-background-color: "#0A2C59"
+editor_options: 
+  chunk_output_type: console
+---
+
+
+# {background-image="../img/wallpaper/bbg_test6.jpeg" background-color="#000000"}
+
+<h1 class="title_h1">
+Introduction<br /> to the 
+</h1>
+
+<!-- `r fontawesome::fa("github", "white")` [github.com/asolisc/data-science-for-finance](https://github.com/asolisc/data-science-for-finance) -->
+
+![](https://raw.githubusercontent.com/rstudio/hex-stickers/master/PNG/tidyverse.png){.absolute top="25" left="650" width="200"}
+
+<!-- From bottom left to upper right: -->
+
+# Why data science for finance?
+
