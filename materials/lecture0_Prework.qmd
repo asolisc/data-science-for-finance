@@ -17,7 +17,7 @@ editor_options:
   chunk_output_type: console
 ---
 
-#  {background-image="../img/wallpaper/bbg_test2.jpeg" background-color="#000000"}
+#  {background-image="../../img/wallpaper/bbg_test2.jpeg" background-color="#000000"}
 
 <h1 class="title_h1">
 
@@ -55,10 +55,9 @@ The course will run for 6 weekends.
 ## Course Resources
 
 -   [Course Website](../index.html)
--   [GitHub Repository](https://github.com/asolisc/data-science-for-finance)
+<!-- -   [GitHub Repository](https://github.com/asolisc/data-science-for-finance) -->
 -   [Main Book: R for Data Science (2e)](https://r4ds.hadley.nz/)
 
-=======
 
 ## What is R?
 
@@ -116,7 +115,7 @@ Cons:
 
 # Installing RStudio
 
-Visit the [this link to download RStudio Desktop](https://posit.co/download/rstudio-desktop/) ![](img/setup/posit-rstudio-download.png) - Click on the button to your right and an .exe file will download. Follow the instruction from the .exe file.
+Visit the [this link to download RStudio Desktop](https://posit.co/download/rstudio-desktop/) ![](../img/setup/posit-rstudio-download.png) - Click on the button to your right and an .exe file will download. Follow the instruction from the .exe file.
 
 # Installing RTools (only for Windows OS)
 
@@ -126,7 +125,7 @@ Visit the [this link to download RStudio Desktop](https://posit.co/download/rstu
 
 # RStudio Tour
 
-![](https://rladiessydney.org/img/quadrants.jpg)
+![](https://rladiessydney.org/../img/quadrants.jpg)
 
 -   Q1 - contains: script, data, command to run script
 -   Q2 - contains: console
@@ -139,17 +138,45 @@ Some people like Rstudio to remember stuff from session to session. We think thi
 
 Locate Preferences (on Mac, this is in the RStudio menu; for Windows, go to Tools \> Global Options). In the General tab, uncheck "Restore .RData..." and select "never" for "Save workspace..."
 
-![](https://rladiessydney.org/img/settings.jpg)
+![](https://rladiessydney.org/../img/settings.jpg)
 
-# RStudio Themes and Fonts
+# RStudio Themes
 
-Type and run the following code into
+Type and run the following code into your console. This first line will install something called a "package" (think of it as additional functionality) named "devtools".
 
-```{r, eval=FALSE}
+```{r, eval=FALSE, echo=TRUE}
 install.packages("devtools")
+```
+
+Then execute the following code which will install a package that contains various RStudio themes.
+
+```{r, eval=FALSE, echo=TRUE}
 devtools::install_github("gadenbuie/rsthemes")
+```
+
+And finally with this line, you install the themes into your RStudio.
+
+```{r, eval=FALSE, echo=TRUE}
 rsthemes::install_rsthemes(include_base16 = TRUE)
 ```
+
+![](../img/setup/rstudio_default_theme.png)
+![](../img/setup/rstudio_example_rsthemes.png)
+
+
+# Fonts
+
+We will make use of custom fonts. A lot.
+If you want to follow all contents locally, make sure the following typefaces are installed:
+
+- [Roboto Condensed](fonts.google.com/specimen/Roboto+Condensed) 
+- [Cabinet Grotesk](fontshare.com/fonts/cabinet-grotesk)
+- [Tabular](fontshare.com/fonts/tabular)
+- [Boska](fontshare.com/fonts/boska)
+- [Pally](fontshare.com/fonts/pally)
+
+You can download all typefaces as a single zip file [here](ggplot2-course-fonts.zip).
+
 
 # RStudio Command Palette
 
@@ -173,19 +200,21 @@ Command + SHIFT + P
 
 Tools \> Show Command Palette
 
-![](img/setup/rstudio_command_palette.png)
+![](../img/setup/rstudio_command_palette.png)
 
 # RStudio Recommended Layout
 
 Tools \> Global Options \> Pane Layout
 
-![](img/setup/recommended_layout.png)
+![](../img/setup/recommended_layout.png)
 
 # Installing R Packages
 
-<Limpiar lista de libraries>
+[Limpiar lista de libraries]
 
-```{r}
+Run the following code to install all required packages.
+
+```{r, echo=TRUE}
 packages <- c(
   "ggplot2", "readr", "tibble", "tidyr", "forcats", "stringr",
   "lubridate", "here", "systemfonts", "magick", "scales", "grid",
@@ -196,19 +225,10 @@ packages <- c(
 )
 ```
 
-```{r, eval = FALSE}
+```{r, eval = FALSE, echo=TRUE}
 install.packages(packages)
 ```
 
-# Required Fonts
-
--   Roboto Condensed: fonts.google.com/specimen/Roboto+Condensed
--   Cabinet Grotesk: fontshare.com/fonts/cabinet-grotesk
--   Tabular: fontshare.com/fonts/tabular
--   Boska: fontshare.com/fonts/boska
--   Pally: fontshare.com/fonts/pally
-
-Para la intro:
 
 # Coding Basics
 
