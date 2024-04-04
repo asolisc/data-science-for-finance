@@ -31,3 +31,25 @@ Introduction<br /> to the
 
 # Why data science for finance?
 
+Chart de Medallion Fund
+
+```{r}
+
+```
+
+
+# Why R and not just Excel for Finance?
+
+Imagen de R vs. logo de Excel
+
+
+# Challenge (R vs. Excel)
+
+Hacer challenges de 3 Exceles con datos de índices.
+
+
+```{r}
+
+```
+
+
