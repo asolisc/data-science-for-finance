@@ -47,9 +47,32 @@ Imagen de R vs. logo de Excel
 
 Hacer challenges de 3 Exceles con datos de índices.
 
+<!-- -- hacer grafiquita dinámica, etc. --- -->
 
 ```{r}
+library(tidyverse)
+library(readxl)
+
+target_dir <- "data/xl/"
+file_paths <- fs::dir_ls(target_dir, glob = "*.xlsx")
+
+
+map(.x = file_paths, .f = ~read_excel(path = .x, na = "null")) |> 
+  list_rbind(names_to = "index") |> 
+  janitor::clean_names() |> 
+  mutate(
+    index = basename(index),
+    index = str_remove(index, "\\.xlsx"),
+    date = as_date(date)
+  ) |> 
+  select(date, index, close) |> 
+  pivot_wider(names_from = index, values_from = close) |> 
+  drop_na()
 
 ```
+
+
+
+
 
 
