@@ -16,11 +16,12 @@ editor_options:
   chunk_output_type: console
 ---
 
-
-# {background-image="../img/wallpaper/bbg_test6.jpeg" background-color="#000000"}
+#  {background-image="../img/wallpaper/bbg_test6.jpeg" background-color="#000000"}
 
 <h1 class="title_h1">
-Introduction<br /> to the 
+
+Introduction<br /> to the
+
 </h1>
 
 <!-- `r fontawesome::fa("github", "white")` [github.com/asolisc/data-science-for-finance](https://github.com/asolisc/data-science-for-finance) -->
@@ -37,11 +38,9 @@ Chart de Medallion Fund
 
 ```
 
-
 # Why R and not just Excel for Finance?
 
 Imagen de R vs. logo de Excel
-
 
 # Challenge (R vs. Excel)
 
@@ -52,12 +51,14 @@ Hacer challenges de 3 Exceles con datos de índices.
 ```{r}
 library(tidyverse)
 library(readxl)
+library(highcharter)
+
 
 target_dir <- "data/xl/"
 file_paths <- fs::dir_ls(target_dir, glob = "*.xlsx")
 
 
-map(.x = file_paths, .f = ~read_excel(path = .x, na = "null")) |> 
+indexes_df <- map(.x = file_paths, .f = ~read_excel(path = .x, na = "null")) |> 
   list_rbind(names_to = "index") |> 
   janitor::clean_names() |> 
   mutate(
@@ -65,14 +66,34 @@ map(.x = file_paths, .f = ~read_excel(path = .x, na = "null")) |>
     index = str_remove(index, "\\.xlsx"),
     date = as_date(date)
   ) |> 
-  select(date, index, close) |> 
+  select(date, index, close) 
+
+indexes_wide <- indexes_df |> 
   pivot_wider(names_from = index, values_from = close) |> 
-  drop_na()
+  drop_na() |> 
+  janitor::clean_names() |> 
+  rename("sp_500" = s_p500)
+
+returns_df <- indexes_wide |> 
+  arrange(date) |> 
+  mutate(
+    across(.cols = !date, 
+           .fns = ~.x / .x[1] * 100
+           # .names = "{.col}_normalized"
+           ),
+  )
+
+# Interactive chart
+
+returns_df |> 
+ hchart("line",
+         hcaes(date, nav),
+         # color = "#002C54") %>% 
+         color = "#258039") %>%
+    hc_title(
+    text = "Holding the S&P 500 Index"
+    ) %>% 
+  hc_add_theme(hc_theme_538())
+
 
 ```
-
-
-
-
-
-
