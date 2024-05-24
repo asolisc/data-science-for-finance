@@ -54,7 +54,7 @@ library(readxl)
 library(highcharter)
 
 
-target_dir <- "data/xl/"
+target_dir <- "../data/xl/"
 file_paths <- fs::dir_ls(target_dir, glob = "*.xlsx")
 
 
@@ -78,7 +78,7 @@ returns_df <- indexes_wide |>
   arrange(date) |> 
   mutate(
     across(.cols = !date, 
-           .fns = ~.x / .x[1] * 100
+           .fns = ~round(.x / .x[1] * 100,2)
            # .names = "{.col}_normalized"
            ),
   )
@@ -87,13 +87,56 @@ returns_df <- indexes_wide |>
 
 returns_df |> 
  hchart("line",
-         hcaes(date, nav),
-         # color = "#002C54") %>% 
-         color = "#258039") %>%
+         hcaes(date,sp_500),
+         color = "#258039",
+         name="S&P 500"
+        ) %>%
+    hc_add_series(
+      data = returns_df,
+      type = "line", 
+      hcaes(x = date, y = nasdaq_100),
+      name = "Nasdaq 100",
+      color = "#F28F43"
+      ) %>%
+  hc_add_series(
+      data = returns_df,
+      type = "line", 
+      hcaes(x = date, y = ipc_mexbol),
+      name = "S&P/BMV IPC",
+      color = "#0D5C99"
+      ) %>%
+  
     hc_title(
-    text = "Holding the S&P 500 Index"
+    text = "Value of $100 investment"
     ) %>% 
   hc_add_theme(hc_theme_538())
+
+
+# highchart(type = "stock") %>%
+#   hc_add_series(
+#     data = returns_df,
+#     type = "line",
+#     hcaes(x = date, y = nasdaq_100),
+#     name = "Nasdaq 100",
+#     color = "#258039"
+#   ) %>%
+#   hc_add_series(
+#     data = returns_df,
+#     type = "line",
+#     hcaes(x = date, y = sp_500),
+#     name = "S&P 500",
+#     color = "#F28F43"
+#   ) %>%
+#   hc_add_series(
+#     data = returns_df,
+#     type = "line",
+#     hcaes(x = date, y = ipc_mexbol),
+#     name = "S&P/BMV IPC",
+#     color = "#0D5C99"
+#   ) %>%
+#   hc_title(text = "Cumulative Returns") %>%
+#   hc_xAxis(title = list(text = "Date")) %>%
+#   hc_yAxis(title = list(text = "Value of $100 investment"))
 
 
 ```
