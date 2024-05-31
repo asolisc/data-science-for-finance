@@ -43,18 +43,17 @@ Chart de Medallion Fund
 Imagen de R vs. logo de Excel
 
 # Challenge (R vs. Excel)
-
-Hacer challenges de 3 Exceles con datos de índices.
-
-<!-- -- hacer grafiquita dinámica, etc. --- -->
-
 ```{r}
+#| fig-width: 20
+#| fig-asp: 0.618
+
+
 library(tidyverse)
 library(readxl)
 library(highcharter)
+library(here)
 
-
-target_dir <- "../data/xl/"
+target_dir <- here("data/xl/")
 file_paths <- fs::dir_ls(target_dir, glob = "*.xlsx")
 
 
@@ -85,18 +84,10 @@ returns_df <- indexes_wide |>
 
 # Interactive chart
 returns_df |> 
-  pivot_longer(cols = !date,
-               names_to = "index", 
-               values_to = "normalized_value"
-               ) |> 
-  ggplot(aes(date, normalized_value, color = index)) +
-  geom_line()
-
-returns_df |> 
  hchart("line",
          hcaes(date,sp_500),
          color = "#258039",
-         name="S&P 500"
+         name ="S&P 500"
         ) %>%
     hc_add_series(
       data = returns_df,
@@ -144,6 +135,94 @@ returns_df |>
 #   hc_title(text = "Cumulative Returns") %>%
 #   hc_xAxis(title = list(text = "Date")) %>%
 #   hc_yAxis(title = list(text = "Value of $100 investment"))
-
-
 ```
+
+# What is the tidyverse?
+
+https://www.tidyverse.org/ (hacer esta slide)
+
+
+# R Coding Basics: Values and Assignment
+
+```{r}
+#| echo: true
+1 / 200 * 30
+
+(59 + 73 + 2) / 3
+
+sin(pi / 2)
+```
+
+
+# R Coding Basics: Comments
+
+R will ignore any text after `#` for that line.
+
+```{r}
+#| echo: true
+
+# create vector of primes
+primes <- c(2, 3, 5, 7, 11, 13)
+
+# multiply primes by 2
+primes * 2
+```
+
+
+# R Coding Basics: Naming Conventions
+
+```{r}
+#| eval: false
+#| echo: true
+
+# Snake Case
+this_is_snake_case
+
+# Camel Case
+ThisIsCamelCase
+
+# Periods
+you.can.also.use.periods
+
+# No conventions are bad
+Seriously_they.are.TerriblyBad
+```
+
+
+# Your Turn
+
+
+
+# R Coding Basics: Calling Functions
+
+
+# Your Turn
+
+
+# R Coding Basics: Installing Packages
+
+```{r}
+#| echo: true
+#| eval: false
+
+# Install a package using your "Console"
+install.packages('name_of_the_package')
+```
+
+# Your Turn
+
+```{r}
+#| echo: true
+#| eval: false
+
+# Install the tidyverse packages
+install.packages('tidyverse')
+```
+
+
+# Downloading course materials and RStudio projects.
+
+
+# Datasets for this course.
+
+
