@@ -220,7 +220,8 @@ install.packages('tidyverse')
 ```
 
 
-# Downloading course materials and RStudio projects.
+# Downloading course materials
+
 
 
 # Datasets for this course.
