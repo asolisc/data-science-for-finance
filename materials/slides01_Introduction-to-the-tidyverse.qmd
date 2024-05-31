@@ -84,6 +84,13 @@ returns_df <- indexes_wide |>
   )
 
 # Interactive chart
+returns_df |> 
+  pivot_longer(cols = !date,
+               names_to = "index", 
+               values_to = "normalized_value"
+               ) |> 
+  ggplot(aes(date, normalized_value, color = index)) +
+  geom_line()
 
 returns_df |> 
  hchart("line",
