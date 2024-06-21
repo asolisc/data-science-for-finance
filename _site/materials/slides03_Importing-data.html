@@ -465,16 +465,21 @@
 </div>
 <p>The following code, downloads the daily OHLCV data and returns for the S&amp;P 500 index starting from January 1st, 1950.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="co"># set options for algorithm</span></span>
-<span id="cb12-2"><a href="#cb12-2"></a>my_ticker <span class="ot">&lt;-</span> <span class="st">'^GSPC'</span></span>
-<span id="cb12-3"><a href="#cb12-3"></a>first_date <span class="ot">&lt;-</span> <span class="st">"1950-01-01"</span></span>
-<span id="cb12-4"><a href="#cb12-4"></a>last_date <span class="ot">&lt;-</span> <span class="fu">today</span>()</span>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="co"># set options</span></span>
+<span id="cb12-2"><a href="#cb12-2"></a>my_ticker  <span class="ot">&lt;-</span> <span class="st">'^GSPC'</span></span>
+<span id="cb12-3"><a href="#cb12-3"></a>first_date <span class="ot">&lt;-</span> <span class="st">"1950-01-01"</span> <span class="co"># Note that the format is: YYYY-MM-DD</span></span>
+<span id="cb12-4"><a href="#cb12-4"></a>last_date  <span class="ot">&lt;-</span> <span class="fu">today</span>()</span>
 <span id="cb12-5"><a href="#cb12-5"></a></span>
 <span id="cb12-6"><a href="#cb12-6"></a><span class="co"># fetch data</span></span>
-<span id="cb12-7"><a href="#cb12-7"></a>df_yf <span class="ot">&lt;-</span> <span class="fu">yf_get</span>(<span class="at">tickers =</span> my_ticker, </span>
+<span id="cb12-7"><a href="#cb12-7"></a>df_yf <span class="ot">&lt;-</span> <span class="fu">yf_get</span>(<span class="at">tickers    =</span> my_ticker, </span>
 <span id="cb12-8"><a href="#cb12-8"></a>                <span class="at">first_date =</span> first_date,</span>
-<span id="cb12-9"><a href="#cb12-9"></a>                <span class="at">last_date =</span> last_date)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb12-9"><a href="#cb12-9"></a>                <span class="at">last_date  =</span> last_date)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</section>
+
+<section id="finally-using-rstudios-ui" class="title-slide slide level1 center">
+<h1>Finally, using RStudio’s UI</h1>
+<p>&lt;Insertar screenshort de “Import Dataset” (opción de UI de RStudio)&gt;.</p>
 </section>
 
 <section id="your-turn" class="title-slide slide level1 center">
@@ -486,6 +491,87 @@
 <li><p>Import data from any of the .csv files located within the “data/csv/” folder (directory).</p></li>
 <li><p>Import data for NASDAQ 100 index using yfR starting from January 1st, 2020 (Hint: look for the appropriate ticker by searching in the Yahoo Finance website).</p></li>
 </ol>
+</section>
+
+<section id="solutions-exercise-1" class="title-slide slide level1 center">
+<h1>Solutions: Exercise 1</h1>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a>sp500_data <span class="ot">&lt;-</span> readxl<span class="sc">::</span><span class="fu">read_excel</span>(<span class="st">"data/xl/S&amp;P500.xlsx"</span>)</span>
+<span id="cb13-2"><a href="#cb13-2"></a></span>
+<span id="cb13-3"><a href="#cb13-3"></a>sp500_data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+
+<section id="solutions-exercise-2" class="title-slide slide level1 center">
+<h1>Solutions: Exercise 2</h1>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a>daily_data <span class="ot">&lt;-</span> readxl<span class="sc">::</span><span class="fu">read_excel</span>(<span class="st">"data/xl/S&amp;P500.xlsx"</span>)</span>
+<span id="cb14-2"><a href="#cb14-2"></a></span>
+<span id="cb14-3"><a href="#cb14-3"></a>daily_data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+
+<section id="solutions-exercise-3" class="title-slide slide level1 center">
+<h1>Solutions: Exercise 3</h1>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a>sp500_data <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="st">"data/csv/S&amp;P500.csv"</span>)</span>
+<span id="cb15-2"><a href="#cb15-2"></a></span>
+<span id="cb15-3"><a href="#cb15-3"></a>sp500_data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+
+<section id="solutions-exercise-4" class="title-slide slide level1 center">
+<h1>Solutions: Exercise 4</h1>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a>nasdaq <span class="ot">&lt;-</span> <span class="fu">yf_get</span>(<span class="at">tickers    =</span> <span class="st">"^NDX"</span>, </span>
+<span id="cb16-2"><a href="#cb16-2"></a>                 <span class="at">first_date =</span> <span class="st">"2020-01-01"</span>, </span>
+<span id="cb16-3"><a href="#cb16-3"></a>                 <span class="at">last_date  =</span> <span class="fu">today</span>()</span>
+<span id="cb16-4"><a href="#cb16-4"></a>                 )</span>
+<span id="cb16-5"><a href="#cb16-5"></a></span>
+<span id="cb16-6"><a href="#cb16-6"></a><span class="fu">head</span>(nasdaq)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+
+<section id="data-export" class="title-slide slide level1 center">
+<h1>Data Export</h1>
+<p>The same logic roughly applies when exporting data. You also have various output formats.</p>
+<p>You can write to a .csv file:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a><span class="fu">write_csv</span>(my_data, <span class="at">file =</span> <span class="st">"path/to/file.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>To an Excel file, you can use the <code>writexl</code> package:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a>writexl<span class="sc">::</span><span class="fu">write_xlsx</span>(my_data, <span class="at">path =</span> <span class="st">"path/to/Excel/file.xlsx"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>However, we recommend a more straightforward way. You can copy your data to the clipboard and then paste them wherever you want. We achieve this by using the <code>clipr</code> package.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a>clipr<span class="sc">::</span><span class="fu">write_clip</span>(my_data)</span>
+<span id="cb19-2"><a href="#cb19-2"></a></span>
+<span id="cb19-3"><a href="#cb19-3"></a><span class="co"># And then you paste to an Excel file.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+
+<section id="your-turn-1" class="title-slide slide level1 center">
+<h1>Your Turn!</h1>
+<ol type="1">
+<li>Export the data for NASDAQ 100 index that you imported using the <code>yfR</code> package. Write it to an Excel file by either using <code>writexl::write_xlsx()</code> or <code>clipr::write_clip()</code></li>
+</ol>
+<p>Bonus: Export the data for NASDAQ 100 index that you imported using the <code>yfR</code> package. The output file should be a tab-separated-value (hint: use the <code>readr::write_tsv()</code> function.)</p>
+<p>Note that if you open this .tsv file and you copy the contents, you can easily paste this into an Excel file as they are separated by tabs.</p>
+</section>
+
+<section id="solutions-exercise-1-1" class="title-slide slide level1 center">
+<h1>Solutions: Exercise 1</h1>
+<p><después hacer="" las="" soluciones=""></después></p>
+</section>
+
+<section id="solutions-bonus-exercise" class="title-slide slide level1 center">
+<h1>Solutions: Bonus exercise</h1>
+<p><después hacer="" las="" soluciones=""></después></p>
+</section>
+
+<section id="introducion-to-r-getting-help" class="title-slide slide level1 center">
+<h1>Introducion to R: Getting Help</h1>
 
 
 <img src="https://cryptologos.cc/logos/cardano-ada-logo.svg?v=023" class="slide-logo r-stretch"><div class="footer footer-default">

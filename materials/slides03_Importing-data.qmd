@@ -115,17 +115,20 @@ library(yfR)
 The following code, downloads the daily OHLCV data and returns for the S&P 500 index starting from January 1st, 1950.
 
 ```{r}
-# set options for algorithm
-my_ticker <- '^GSPC'
-first_date <- "1950-01-01"
-last_date <- today()
+# set options
+my_ticker  <- '^GSPC'
+first_date <- "1950-01-01" # Note that the format is: YYYY-MM-DD
+last_date  <- today()
 
 # fetch data
-df_yf <- yf_get(tickers = my_ticker, 
+df_yf <- yf_get(tickers    = my_ticker, 
                 first_date = first_date,
-                last_date = last_date)
+                last_date  = last_date)
 ```
 
+# Finally, using RStudio's UI
+
+<Insertar screenshort de "Import Dataset" (opción de UI de RStudio)>.
 
 
 # Your Turn!
@@ -139,3 +142,83 @@ Do the following four exercises.
 3. Import data from any of the .csv files located within the "data/csv/" folder (directory).
 
 4. Import data for NASDAQ 100 index using yfR starting from January 1st, 2020 (Hint: look for the appropriate ticker by searching in the Yahoo Finance website).
+
+# Solutions: Exercise 1
+
+```{r}
+sp500_data <- readxl::read_excel("data/xl/S&P500.xlsx")
+
+sp500_data
+```
+
+
+# Solutions: Exercise 2
+
+```{r}
+daily_data <- readxl::read_excel("data/xl/S&P500.xlsx")
+
+daily_data
+```
+
+
+# Solutions: Exercise 3
+
+```{r}
+sp500_data <- readr::read_csv("data/csv/S&P500.csv")
+
+sp500_data
+```
+
+
+# Solutions: Exercise 4
+```{r}
+nasdaq <- yf_get(tickers    = "^NDX", 
+                 first_date = "2020-01-01", 
+                 last_date  = today()
+                 )
+
+head(nasdaq)
+```
+
+
+# Data Export
+The same logic roughly applies when exporting data. You also have various output formats.
+
+You can write to a .csv file:
+```{r}
+write_csv(my_data, file = "path/to/file.csv")
+```
+
+To an Excel file, you can use the `writexl` package:
+```{r}
+writexl::write_xlsx(my_data, path = "path/to/Excel/file.xlsx")
+```
+
+However, we recommend a more straightforward way. You can copy your data to the clipboard and then paste them wherever you want. We achieve this by using the `clipr` package.
+
+```{r}
+clipr::write_clip(my_data)
+
+# And then you paste to an Excel file.
+
+```
+
+
+# Your Turn!
+
+1. Export the data for NASDAQ 100 index that you imported using the `yfR` package. Write it to an Excel file by either using `writexl::write_xlsx()` or `clipr::write_clip()`
+
+
+Bonus: Export the data for NASDAQ 100 index that you imported using the `yfR` package. The output file should be a tab-separated-value (hint: use the `readr::write_tsv()` function.)
+
+Note that if you open this .tsv file and you copy the contents, you can easily paste this into an Excel file as they are separated by tabs.
+
+
+# Solutions: Exercise 1
+<Después hacer las soluciones>
+
+# Solutions: Bonus exercise
+<Después hacer las soluciones>
+
+
+# Introducion to R: Getting Help
