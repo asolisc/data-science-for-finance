@@ -1,0 +1,104 @@
+---
+# title: "Data Science for the Financial Analyst"
+format: 
+  revealjs:
+    # theme: "theme/quarto_theme.scss"
+    logo: "https://cryptologos.cc/logos/cardano-ada-logo.svg?v=023"
+    height: 1080
+    width: 1920
+    incremental: false
+    footer: "[Return to website](../lectures/01_Introduction.html)"
+# title-slide-attributes:
+  # data-background-size: contain
+  # data-background-image: "images/btc_candles.jpg"
+  # data-background-color: "#0A2C59"
+editor_options: 
+  
+  chunk_output_type: console
+execute: 
+  eval: false
+  echo: true
+---
+
+#  {background-image="../img/wallpaper/bbg_test6.jpeg" background-color="#000000"}
+
+<h1 class="title_h1">
+
+Data <br /> Wrangling
+
+</h1>
+
+![](https://raw.githubusercontent.com/rstudio/hex-stickers/master/PNG/dplyr.png){.absolute top="25" left="650" width="200"}
+
+# The Data Science Workflow
+
+imagen sin highlight
+
+# The Data Science Workflow
+
+imagen con highlight
+
+# Data Wrangling with the `{tidyverse}`
+
+# R Packages for Data Science
+
+The Tidyverse is an opinionated collection of R packages designed for data science.
+
+All packages share an underlying design philosophy. grammar, and data structures.
+
+# Data Wrangling <br> The Setup
+
+# Example Data: `FANG`
+
+-   A dataset containing the daily historical stock prices for the "FANG" tech stocks, "FB", "AMZN", "NFLX", and "GOOG", spanning from the beginning of 2013 through the end of 2016.
+
+-   4K rows (observations) and 8 columns (variables).
+
+-   Data source: [Yahoo Finance API](https://finance.yahoo.com/)
+
+-   Available as a data set in the `{tidyquant}` package. install.packages("tidyquant"), library(tidyquant)
+
+-   See also ?tidyquant::FANG
+
+# Example Data: `FANG`
+
+```{r}
+# install.packages("tidyquant")
+
+library(tidyquant)
+```
+
+```{r}
+tibble::glimpse(FANG)
+head(FANG)
+```
+
+# 
+
+Stock performance chart
+
+# Advantages of the `{dplyr} package`
+
+-   Contains a set of convenient functions to perform common transformation and summary operations on tabular data.
+
+-   Compared to Base R functions:
+
+    -   Syntax is more consistent
+
+    -   Output is more consistent (tibbles)
+
+    -   Can also work with databases.
+
+# The main verbs (functions) of the {dplyr} package.
+
+-   `filter()` : Pick rows with matching criteria
+
+-   `select()` : Pick columns with matching criteria
+
+-   `arrange()` : Reorder rows
+
+-   `mutate()` : Create new variables
+
+-   `summarize()` or summarise() : Sum up variables
+
+-   `group_by()` : Create subsets
