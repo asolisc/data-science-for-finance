@@ -1,0 +1,297 @@
+---
+# title: "Data Science for the Financial Analyst"
+format: 
+  revealjs:
+    # theme: "theme/quarto_theme.scss"
+    logo: "https://cryptologos.cc/logos/cardano-ada-logo.svg?v=023"
+    height: 1080
+    width: 1920
+    incremental: false
+    footer: "[Return to website](../lectures/01_Introduction.html)"
+# title-slide-attributes:
+  # data-background-size: contain
+  # data-background-image: "images/btc_candles.jpg"
+  # data-background-color: "#0A2C59"
+editor_options: 
+  chunk_output_type: console
+  
+execute: 
+  eval: false
+  echo: true
+---
+
+
+#  {background-image="../img/wallpaper/bbg_test6.jpeg" background-color="#000000"}
+
+<h1 class="title_h1">
+
+Importing <br /> Data
+
+</h1>
+
+![](https://raw.githubusercontent.com/rstudio/hex-stickers/master/PNG/readr.png){.absolute top="25" left="650" width="200"}
+
+# The Data Science Workflow
+
+imagen sin highlight
+
+
+# The Data Science Workflow
+
+imagen con highlight
+
+
+# Data Import 
+Usually, you create data frames by loading data files such as .txt, .csv, .xlsx, and much more.
+
+
+```{r}
+my_data <- read_excel("path/here")
+```
+
+```{r}
+my_data <- read_csv("path_to_csv_here")
+```
+
+
+The ./ refers to a relative path, starting at your working directory (wd).
+You can check your "wd" by running `getwd()` in your R console.
+
+You can even import data from a web resource by passing a valid URL that points to a file. In the example below, we read a .csv but we provide a URL instead of a "path":
+
+
+```{r}
+my_data <- read_csv("URL_path")
+```
+
+
+
+# Data Import: Tibbles
+
+The `{readr}` package provides a fast and friendly way to read rectangular data which are stored as tibbles:
+
+
+```{r}
+my_data <- readr::read_delim("path_to_file", delim = "|")
+```
+
+
+The following commands are equivalent: both read a comma-separated-values (csv) file.
+
+
+```{r}
+my_data <- readr::read_delim("path_to_file", delim = ",")
+```
+
+```{r}
+my_data <- read_csv("path_to_csv_here")
+```
+
+
+If you encounter a file separated by semicolon (;), you can use a variant of the `read_csv()` function called `read_csv2()`:
+
+
+```{r}
+my_data <- read_csv2("path_to_semicolon_sep_val_file")
+```
+
+
+Which would be equivalent to:
+
+
+```{r}
+my_data <- readr::read_delim("path_to_file", delim = ";")
+```
+
+
+# Data Import: Excel Files (insertar emoji de gafas de sol)
+
+The `{readr}` package provides functionality to import Excel sheets.
+
+
+```{r}
+my_data <- readxl::read_excel("path_to_Excel_file")
+```
+
+
+By default, the `read_excel()` function reads the first sheet of the Excel file, but you can read other sheets by using the `sheet` argument.
+
+
+```{r}
+my_data <- readxl::read_excel("path_to_Excel_file", sheet = 2)
+```
+
+
+
+# Data Import: Using R packages
+
+
+```{r}
+library(yfR)
+```
+
+
+The following code, downloads the daily OHLCV data and returns for the S&P 500 index starting from January 1st, 1950.
+
+
+```{r}
+# set options
+my_ticker  <- '^GSPC'
+first_date <- "1950-01-01" # Note that the format is: YYYY-MM-DD
+last_date  <- today()
+
+# fetch data
+df_yf <- yf_get(tickers    = my_ticker, 
+                first_date = first_date,
+                last_date  = last_date)
+```
+
+
+# Finally, using RStudio's UI
+
+<Insertar screenshort de "Import Dataset" (opción de UI de RStudio)>.
+
+
+# Your Turn!
+
+Do the following four exercises.
+
+1. Import data from any of the Excel files located within the "data/xl/" folder (directory).
+
+2. From the file "data/xl/daily.xlsx", import the data on the second sheet.
+
+3. Import data from any of the .csv files located within the "data/csv/" folder (directory).
+
+4. Import data for NASDAQ 100 index using yfR starting from January 1st, 2020 (Hint: look for the appropriate ticker by searching in the Yahoo Finance website).
+
+# Solutions: Exercise 1
+
+
+```{r}
+sp500_data <- readxl::read_excel(path = "data/xl/S&P500.xlsx")
+
+sp500_data
+```
+
+
+
+# Solutions: Exercise 2
+
+
+```{r}
+daily_data <- readxl::read_excel(path = "data/xl/S&P500.xlsx")
+
+daily_data
+```
+
+
+
+# Solutions: Exercise 3
+
+
+```{r}
+sp500_data <- readr::read_csv(file = "data/csv/S&P500.csv")
+
+sp500_data
+```
+
+
+
+# Solutions: Exercise 4
+
+```{r}
+nasdaq <- yf_get(tickers    = "^NDX", 
+                 first_date = "2020-01-01", # YYYY-MM-DD format
+                 last_date  = today()
+                 )
+head(nasdaq)
+```
+
+
+
+# Data Export
+The same logic roughly applies when exporting data. You also have various output formats.
+
+You can write to a .csv file:
+
+```{r}
+write_csv(my_data, file = "path/to/file.csv")
+```
+
+
+To an Excel file, you can use the `writexl` package:
+
+```{r}
+writexl::write_xlsx(my_data, path = "path/to/Excel/file.xlsx")
+```
+
+
+However, we recommend a more straightforward way. You can copy your data to the clipboard and then paste them wherever you want. We achieve this by using the `clipr` package.
+
+
+```{r}
+clipr::write_clip(my_data)
+
+# And then you paste to an Excel file...
+```
+
+
+
+# Your Turn!
+
+1. Export the data for NASDAQ 100 index that you imported using the `yfR` package. Write it to an Excel file by either using `writexl::write_xlsx()` or `clipr::write_clip()`
+
+
+Bonus: Export the data for NASDAQ 100 index that you imported using the `yfR` package. The output file should be a tab-separated-value (hint: use the `readr::write_tsv()` function.)
+
+Note that if you open this .tsv file and you copy the contents, you can easily paste this into an Excel file as they are separated by tabs.
+
+
+# Solutions: Exercise 1
+<Después hacer las soluciones>
+
+# Solutions: Bonus exercise
+<Después hacer las soluciones>
+
+
+# Introduction to R: Getting Help
+
+If you want to view how a function is used, you can do it in one of several ways:
+
+1. Using the `help()` function:
+
+
+```{r}
+help(mean) # Getting documentation for the `mean` function.
+```
+
+
+2. Use the `?` prefix:
+
+
+```{r}
+?yf_get
+```
+
+
+3. Select the function (without the parentheses) and press F1:
+
+```{r}
+mean()
+yf_get()
+```
+
+
+
+# Anatomy of R's documentation
+
+<Poner screenshots>
+
+Description
+Usage
+Arguments
+Value
+Examples
+
+
+

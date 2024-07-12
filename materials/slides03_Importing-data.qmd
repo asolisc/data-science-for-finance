@@ -146,7 +146,7 @@ Do the following four exercises.
 # Solutions: Exercise 1
 
 ```{r}
-sp500_data <- readxl::read_excel("data/xl/S&P500.xlsx")
+sp500_data <- readxl::read_excel(path = "data/xl/S&P500.xlsx")
 
 sp500_data
 ```
@@ -155,7 +155,7 @@ sp500_data
 # Solutions: Exercise 2
 
 ```{r}
-daily_data <- readxl::read_excel("data/xl/S&P500.xlsx")
+daily_data <- readxl::read_excel(path = "data/xl/S&P500.xlsx")
 
 daily_data
 ```
@@ -164,7 +164,7 @@ daily_data
 # Solutions: Exercise 3
 
 ```{r}
-sp500_data <- readr::read_csv("data/csv/S&P500.csv")
+sp500_data <- readr::read_csv(file = "data/csv/S&P500.csv")
 
 sp500_data
 ```
@@ -173,10 +173,9 @@ sp500_data
 # Solutions: Exercise 4
 ```{r}
 nasdaq <- yf_get(tickers    = "^NDX", 
-                 first_date = "2020-01-01", 
+                 first_date = "2020-01-01", # YYYY-MM-DD format
                  last_date  = today()
                  )
-
 head(nasdaq)
 ```
 
@@ -199,8 +198,7 @@ However, we recommend a more straightforward way. You can copy your data to the 
 ```{r}
 clipr::write_clip(my_data)
 
-# And then you paste to an Excel file.
-
+# And then you paste to an Excel file...
 ```
 
 
@@ -221,4 +219,37 @@ Note that if you open this .tsv file and you copy the contents, you can easily p
 <Después hacer las soluciones>
 
 
-# Introducion to R: Getting Help
+# Introduction to R: Getting Help
+
+If you want to view how a function is used, you can do it in one of several ways:
+
+1. Using the `help()` function:
+
+```{r}
+help(mean) # Getting documentation for the `mean` function.
+```
+
+2. Use the `?` prefix:
+
+```{r}
+?yf_get
+```
+
+3. Select the function (without the parentheses) and press F1:
+```{r}
+mean()
+yf_get()
+```
+
+
+# Anatomy of R's documentation
+
+<Poner screenshots>
+
+Description
+Usage
+Arguments
+Value
+Examples
+
+
