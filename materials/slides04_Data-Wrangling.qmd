@@ -102,3 +102,148 @@ Stock performance chart
 -   `summarize()` or summarise() : Sum up variables
 
 -   `group_by()` : Create subsets
+
+-   `distinct()` : Removes duplicates from a subset of columns
+
+# Consistent Syntax of {dplyr}
+
+All functions take the same main arguments:
+
+<insertar imagen de lo siguiente>
+verb(data, condition)
+
+The first argument is your data, subsequent arguments say what to do with the data. These arguments depend on the "verb" (function) you are using.
+
+# Loading {dplyr}
+
+```{r}
+library(dplyr)
+```
+
+
+# filter() - pick rows with matching criteria -
+(create cool slide for this one)
+
+
+
+# Pick Rows with Matching Criteria
+
+filter(data, conditon) allows you to keep rows based on the values of the columns:
+
+```{r}
+# FANG = FB, AMZN, NFLX, GOOG
+fang_data <- FANG
+
+filter(fang_data, symbol == "AMZN", close > 300)
+```
+
+## Equivalent code in base R
+
+```{r}
+fang_data[fang_data$symbol == "AMZN" & fang_data$close > 300, ]
+```
+
+
+# Pick Rows with Matching Criteria
+
+filter(data, conditon) allows you to keep rows based on the values of the columns:
+
+-> join filtering conditions with `&` (and) and `|` (or):
+
+```{r}
+filter(fang_data, symbol == "AMZN" | symbol == "GOOG")
+```
+
+# Pick Rows with Matching Criteria
+
+filter(data, conditon) allows you to keep rows based on the values of the columns:
+
+-> You can also combine conditions with `&` or `,` to indicate "and" (check for both conditions) or with `|` to indicate "or" (check for either condition):
+
+```{r}
+# filter for either AMZN or GOOG, but filter rows where close is greater than 840
+filter(fang_data, (symbol == "AMZN" | symbol == "GOOG"), close > 840)
+```
+
+-> There’s a useful shortcut when you’re combining `|` and `==` : `%in%`. It keeps rows where the variable equals one of the values on the right. For example, if we would like to filter the data for `AMZN` and `GOOG`, we can write:
+
+```{r}
+filter(fang_data, symbol %in% c("AMZN", "GOOG"))
+```
+
+
+# Pick Rows with Matching Criteria
+
+filter(data, conditon) allows you to select a subset of rows:
+
+-> filter conditions out with `!=` (not equal)
+
+```{r}
+filter(fang_data, symbol != "FB", symbol != "AMZN")
+```
+
+-> The `%in%` operator is very useful for 
+
+# Pick Rows with Matching Criteria
+
+filter(data, condition) allows you to select a subset of rows:
+
+-> reverse filter conditions with `!`:
+
+```{r}
+# Remove data from FB
+filter(fang_data, !symbol == "FB")
+```
+
+-> Here the `%in%` operator is also very useful, when you want to negate several conditions:
+
+```{r}
+# Remove data from both FB and AMZN
+filter(fang_data, !symbol %in% c("FB", "AMZN"))
+
+
+# Equivalent to:
+filter(fang_data, !symbol == "FB", !symbol == "AMZN")
+```
+
+# Your Turn!
+
+Do the following two exercises.
+
+1.  Filter the data for NFLX, AMZN, and FB. Can you think of another way of doing it?
+
+2.  Filter the rows where NFLX stock had a closing price between 105 and 110.
+
+
+# Solutions: Exercise 1
+
+```{r}
+filter(fang_data, symbol %in% c("NFLX", "AMZN", "FB"))
+```
+
+Equivalent to:
+
+```{r}
+filter(fang_data, symbol == "NFLX" | symbol == "AMZN" | symbol == "FB")
+```
+
+Bonus:
+```{r}
+filter(fang_data, symbol != "GOOG")
+```
+
+# Solutions: Exercise 2
+
+```{r}
+filter(fang_data, symbol == "NFLX", close >= 105, close <= 110)
+```
+
+
+
+# select() - pick columns based on their name -
+(create cool slide for this one)
+
+```{r}
+
+```
+
