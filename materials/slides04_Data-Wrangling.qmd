@@ -144,7 +144,7 @@ fang_data[fang_data$symbol == "AMZN" & fang_data$close > 300, ]
 
 filter(data, conditon) allows you to keep rows based on the values of the columns:
 
--\> join filtering conditions with `&` (and) and `|` (or):
+- join filtering conditions with `&` (and) and `|` (or):
 
 ```{r}
 filter(fang_data, symbol == "AMZN" | symbol == "GOOG")
@@ -154,14 +154,14 @@ filter(fang_data, symbol == "AMZN" | symbol == "GOOG")
 
 filter(data, conditon) allows you to keep rows based on the values of the columns:
 
--\> You can also combine conditions with `&` or `,` to indicate "and" (check for both conditions) or with `|` to indicate "or" (check for either condition):
+- You can also combine conditions with `&` or `,` to indicate "and" (check for both conditions) or with `|` to indicate "or" (check for either condition):
 
 ```{r}
 # filter for either AMZN or GOOG, but filter rows where close is greater than 840
 filter(fang_data, (symbol == "AMZN" | symbol == "GOOG"), close > 840)
 ```
 
--\> There's a useful shortcut when you're combining `|` and `==` : `%in%`. It keeps rows where the variable equals one of the values on the right. For example, if we would like to filter the data for `AMZN` and `GOOG`, we can write:
+- There's a useful shortcut when you're combining `|` and `==` : `%in%`. It keeps rows where the variable equals one of the values on the right. For example, if we would like to filter the data for `AMZN` and `GOOG`, we can write:
 
 ```{r}
 filter(fang_data, symbol %in% c("AMZN", "GOOG"))
@@ -171,26 +171,26 @@ filter(fang_data, symbol %in% c("AMZN", "GOOG"))
 
 filter(data, conditon) allows you to select a subset of rows:
 
--\> filter conditions out with `!=` (not equal)
+- filter conditions out with `!=` (not equal)
 
 ```{r}
 filter(fang_data, symbol != "FB", symbol != "AMZN")
 ```
 
--\> The `%in%` operator is very useful for
+- The `%in%` operator is very useful for
 
 # Pick Rows with Matching Criteria
 
 filter(data, condition) allows you to select a subset of rows:
 
--\> reverse filter conditions with `!`:
+- reverse filter conditions with `!`:
 
 ```{r}
 # Remove data from FB
 filter(fang_data, !symbol == "FB")
 ```
 
--\> Here the `%in%` operator is also very useful, when you want to negate several conditions:
+- Here the `%in%` operator is also very useful, when you want to negate several conditions:
 
 ```{r}
 # Remove data from both FB and AMZN
@@ -348,6 +348,94 @@ select(fang_data, ends_with("e"))
 
 (create cool slide for this one) slide 00292
 
-Test test
+# Reorder Rows
 
-Test 2
+`arrange(data, condition)` allows you to order rows by variables. 
+
+By default, it `arrange()` orders the columns in **ascending** order.
+
+```{r}
+arrange(fang_data, close)
+```
+
+
+# Reorder Rows
+
+`arrange(data, condition)` allows you to order rows by variables. By default, it `arrange()` orders the columns in **ascending** order.
+
+```{r, echo=FALSE}
+arrange(fang_data, close)
+```
+
+Equivalent to base R:
+```{r}
+fang_data[order(fang_data$close), ]
+```
+
+
+# Reorder Rows
+
+`arrange(data, condition)` allows you to order rows by variables. 
+
+By default, it `arrange()` orders the columns in **ascending** order. You can reverse the order (**descending**) using the **prefix `-` with the column name**:
+
+```{r}
+arrange(fang_data, -close)
+```
+
+**This only works for numeric columns!**
+
+
+# Reorder Rows
+
+`arrange(data, condition)` allows you to order rows by variables. 
+
+Alternatively, you can use the `desc()` function:
+
+```{r}
+arrange(fang_data, desc(close))
+```
+
+
+# Reorder Rows
+
+`arrange(data, condition)` allows you to order rows by variables. 
+
+You can order by more than one column (the first column takes precedence, and so on):
+
+```{r}
+arrange(fang_data, desc(date), volume)
+```
+
+
+# Your Turn!
+
+Complete the following two exercises.
+
+1.  In the `fang_data` tibble, order all rows so that you have the dates from most recent to oldest and the tickers are sorted alphabetically.
+
+2. Sort the `fang_data` tibble so that you get, for each date, the closing prices in descending order. Dates should be sorted by oldest to most recent.
+
+# Solutions: Exercise 1
+
+```{r}
+arrange(fang_data, desc(date), symbol)
+```
+
+
+# Solutions: Exercise 2
+
+```{r}
+arrange(fang_data, date, desc(close))
+```
+
+Bonus:
+
+```{r}
+arrange(fang_data, date, -close) # as 'close' is numeric
+```
+
+
+# mutate() - Create new variable -
+
+(create cool slide for this one) slide 00298
