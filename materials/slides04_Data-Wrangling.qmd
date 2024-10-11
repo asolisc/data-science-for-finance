@@ -144,7 +144,7 @@ fang_data[fang_data$symbol == "AMZN" & fang_data$close > 300, ]
 
 filter(data, conditon) allows you to keep rows based on the values of the columns:
 
-- join filtering conditions with `&` (and) and `|` (or):
+-   join filtering conditions with `&` (and) and `|` (or):
 
 ```{r}
 filter(fang_data, symbol == "AMZN" | symbol == "GOOG")
@@ -154,14 +154,14 @@ filter(fang_data, symbol == "AMZN" | symbol == "GOOG")
 
 filter(data, conditon) allows you to keep rows based on the values of the columns:
 
-- You can also combine conditions with `&` or `,` to indicate "and" (check for both conditions) or with `|` to indicate "or" (check for either condition):
+-   You can also combine conditions with `&` or `,` to indicate "and" (check for both conditions) or with `|` to indicate "or" (check for either condition):
 
 ```{r}
 # filter for either AMZN or GOOG, but filter rows where close is greater than 840
 filter(fang_data, (symbol == "AMZN" | symbol == "GOOG"), close > 840)
 ```
 
-- There's a useful shortcut when you're combining `|` and `==` : `%in%`. It keeps rows where the variable equals one of the values on the right. For example, if we would like to filter the data for `AMZN` and `GOOG`, we can write:
+-   There's a useful shortcut when you're combining `|` and `==` : `%in%`. It keeps rows where the variable equals one of the values on the right. For example, if we would like to filter the data for `AMZN` and `GOOG`, we can write:
 
 ```{r}
 filter(fang_data, symbol %in% c("AMZN", "GOOG"))
@@ -171,26 +171,26 @@ filter(fang_data, symbol %in% c("AMZN", "GOOG"))
 
 filter(data, conditon) allows you to select a subset of rows:
 
-- filter conditions out with `!=` (not equal)
+-   filter conditions out with `!=` (not equal)
 
 ```{r}
 filter(fang_data, symbol != "FB", symbol != "AMZN")
 ```
 
-- The `%in%` operator is very useful for
+-   The `%in%` operator is very useful for
 
 # Pick Rows with Matching Criteria
 
 filter(data, condition) allows you to select a subset of rows:
 
-- reverse filter conditions with `!`:
+-   reverse filter conditions with `!`:
 
 ```{r}
 # Remove data from FB
 filter(fang_data, !symbol == "FB")
 ```
 
-- Here the `%in%` operator is also very useful, when you want to negate several conditions:
+-   Here the `%in%` operator is also very useful, when you want to negate several conditions:
 
 ```{r}
 # Remove data from both FB and AMZN
@@ -265,7 +265,7 @@ fang_data[, c("symbol", "date", "close")]
 
 # Pick Columns with Matching Criteria
 
-You can also exclude certain columns by using the `!` prefix. Historically this operation was done with `-` instead of `!`, so you’re likely to see that in the wild. These two operators serve the same purpose but with subtle differences in behavior. We recommend using `!` because it reads as “not” and combines well with `&` and `|`.
+You can also exclude certain columns by using the `!` prefix. Historically this operation was done with `-` instead of `!`, so you're likely to see that in the wild. These two operators serve the same purpose but with subtle differences in behavior. We recommend using `!` because it reads as "not" and combines well with `&` and `|`.
 
 ```{r}
 select(fang_data, !low, !high, !volume)
@@ -298,11 +298,11 @@ fang_data |>
 
 There are a number of helper functions you can use within `select()`:
 
-`starts_with("abc")`: matches names that begin with “abc”.
+`starts_with("abc")`: matches names that begin with "abc".
 
-`ends_with("xyz")`: matches names that end with “xyz”.
+`ends_with("xyz")`: matches names that end with "xyz".
 
-`contains("ijk")`: matches names that contain “ijk”.
+`contains("ijk")`: matches names that contain "ijk".
 
 `num_range("x", 1:3)`: matches x1, x2 and x3.
 
@@ -350,14 +350,13 @@ select(fang_data, ends_with("e"))
 
 # Reorder Rows
 
-`arrange(data, condition)` allows you to order rows by variables. 
+`arrange(data, condition)` allows you to order rows by variables.
 
 By default, it `arrange()` orders the columns in **ascending** order.
 
 ```{r}
 arrange(fang_data, close)
 ```
-
 
 # Reorder Rows
 
@@ -368,14 +367,14 @@ arrange(fang_data, close)
 ```
 
 Equivalent to base R:
+
 ```{r}
 fang_data[order(fang_data$close), ]
 ```
 
-
 # Reorder Rows
 
-`arrange(data, condition)` allows you to order rows by variables. 
+`arrange(data, condition)` allows you to order rows by variables.
 
 By default, it `arrange()` orders the columns in **ascending** order. You can reverse the order (**descending**) using the **prefix `-` with the column name**:
 
@@ -385,10 +384,9 @@ arrange(fang_data, -close)
 
 **This only works for numeric columns!**
 
-
 # Reorder Rows
 
-`arrange(data, condition)` allows you to order rows by variables. 
+`arrange(data, condition)` allows you to order rows by variables.
 
 Alternatively, you can use the `desc()` function:
 
@@ -396,10 +394,9 @@ Alternatively, you can use the `desc()` function:
 arrange(fang_data, desc(close))
 ```
 
-
 # Reorder Rows
 
-`arrange(data, condition)` allows you to order rows by variables. 
+`arrange(data, condition)` allows you to order rows by variables.
 
 You can order by more than one column (the first column takes precedence, and so on):
 
@@ -407,21 +404,19 @@ You can order by more than one column (the first column takes precedence, and so
 arrange(fang_data, desc(date), volume)
 ```
 
-
 # Your Turn!
 
 Complete the following two exercises.
 
 1.  In the `fang_data` tibble, order all rows so that you have the dates from most recent to oldest and the tickers are sorted alphabetically.
 
-2. Sort the `fang_data` tibble so that you get, for each date, the closing prices in descending order. Dates should be sorted by oldest to most recent.
+2.  Sort the `fang_data` tibble so that you get, for each date, the closing prices in descending order. Dates should be sorted by oldest to most recent.
 
 # Solutions: Exercise 1
 
 ```{r}
 arrange(fang_data, desc(date), symbol)
 ```
-
 
 # Solutions: Exercise 2
 
@@ -435,7 +430,100 @@ Bonus:
 arrange(fang_data, date, -close) # as 'close' is numeric
 ```
 
-
 # mutate() - Create new variable -
 
-(create cool slide for this one) slide 00298
+(create cool slide for this one)
+
+# Create New Variables
+
+mutate(data, condition) allows you to create new variables (columns) based on existing columns or not based on your data.
+
+```{r}
+mutate(fang_data, daily_return = close/open -1)
+```
+
+# Create New Variables
+
+mutate(data, condition) allows you to create new variables (columns)
+based on existing columns or not based on your data:
+
+Equivalent to base R:
+
+```{r}
+head(transform(fang_data, daily_return = close/open -1))
+```
+
+# Create New Variables
+
+mutate(data, condition) allows you to create new variables (columns)
+based on existing columns or not based on your data:
+
+```{r}
+mutate(fang_data, year = lubridate::year(date) )
+```
+
+# Create New Variables
+
+mutate(data, condition) allows you to create new variables (columns)
+based on existing columns or **not based on your data**:
+
+```{r}
+mutate(fang_data, security_type = "Stocks" )
+```
+
+# Create New Variables
+
+mutate(data, condition) allows you to create new variables (columns)
+based on existing columns. You can even use newly created columns in the same step.
+
+```{r}
+mutate(fang_data, daily_return = close/open -1, return_sign = if_else(daily_return>0, "Positive", "Negative"))
+```
+
+# Create New Variables
+
+By default, mutate() adds new columns on the right-hand side of your dataset, which makes it difficult to see what’s happening here. We can use the .before argument to instead add the variables to the left-hand side:
+
+```{r}
+mutate(fang_data, daily_return = close/open -1, return_sign = if_else(daily_return>0, "Positive", "Negative"), .before = 1)
+```
+
+The . indicates that .before is an argument to the function, not the name of a third new variable we are creating. You can also use .after to add after a variable, and in both .before and .after you can use the variable name instead of a position. For example, we could add the new variables after close:
+
+```{r}
+mutate(fang_data, daily_return = close/open -1, return_sign = if_else(daily_return>0, "Positive", "Negative"), .after = close)
+```
+
+# Create New Variables
+
+mutate() in combination with across() allows you to transform all columns in one step:
+
+```{r}
+mutate(fang_data, across(.cols = everything(), as.character))
+```
+
+```{r}
+mutate(fang_data, across(where(is.character), as.factor))
+```
+
+# Your Turn!
+
+Complete the following two exercises.
+
+1.  In the `fang_data` tibble, decompose the date as year, month, day, and weekday.Add them after the `date` column. Hint: Use the `year()`, `month()`, `day()`, and `wday()`. 
+
+2. Add name of the Month and name of the day of the week. Hint: Read the documentation for month and wday
+
+# Solutions: Exercise 1
+
+```{r}
+mutate(fang_data, year = year(date), month = month(date), day = day(date), week_day = wday(date), .after = date)
+```
+
+# Solutions: Exercise 2
+
+```{r}
+?month
+?wday
+mutate(fang_data, year = year(date), month = month(date, label=TRUE, abbr = FALSE), day = day(date), week_day = wday(date,label=TRUE, abbr = FALSE ), .after = date)
+```

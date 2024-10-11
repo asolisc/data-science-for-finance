@@ -212,36 +212,31 @@ Note that if you open this .tsv file and you copy the contents, you can easily p
 
 <Después hacer las soluciones>
 
-
 # Introduction to R: Getting Help
 
 If you want to view how a function is used, you can do it in one of several ways:
 
-1. Using the `help()` function:
+1.  Using the `help()` function:
 
 ```{r}
 help(mean) # Getting documentation for the `mean` function.
 ```
 
-2. Use the `?` prefix:
+2.  Use the `?` prefix:
 
 ```{r}
 ?yf_get
 ```
 
-3. Select the function (without the parentheses) and press F1:
+3.  Select the function (without the parentheses) and press F1:
+
 ```{r}
 mean()
 yf_get()
 ```
 
-
 # Anatomy of R's documentation
 
 <Poner screenshots>
 
-Description
-Usage
-Arguments
-Value
-Examples
+Description Usage Arguments Value Examples
