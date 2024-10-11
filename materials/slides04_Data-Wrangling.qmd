@@ -444,8 +444,7 @@ mutate(fang_data, daily_return = close/open -1)
 
 # Create New Variables
 
-mutate(data, condition) allows you to create new variables (columns)
-based on existing columns or not based on your data:
+mutate(data, condition) allows you to create new variables (columns) based on existing columns or not based on your data:
 
 Equivalent to base R:
 
@@ -455,8 +454,7 @@ head(transform(fang_data, daily_return = close/open -1))
 
 # Create New Variables
 
-mutate(data, condition) allows you to create new variables (columns)
-based on existing columns or not based on your data:
+mutate(data, condition) allows you to create new variables (columns) based on existing columns or not based on your data:
 
 ```{r}
 mutate(fang_data, year = lubridate::year(date) )
@@ -464,8 +462,7 @@ mutate(fang_data, year = lubridate::year(date) )
 
 # Create New Variables
 
-mutate(data, condition) allows you to create new variables (columns)
-based on existing columns or **not based on your data**:
+mutate(data, condition) allows you to create new variables (columns) based on existing columns or **not based on your data**:
 
 ```{r}
 mutate(fang_data, security_type = "Stocks" )
@@ -473,8 +470,7 @@ mutate(fang_data, security_type = "Stocks" )
 
 # Create New Variables
 
-mutate(data, condition) allows you to create new variables (columns)
-based on existing columns. You can even use newly created columns in the same step.
+mutate(data, condition) allows you to create new variables (columns) based on existing columns. You can even use newly created columns in the same step.
 
 ```{r}
 mutate(fang_data, daily_return = close/open -1, return_sign = if_else(daily_return>0, "Positive", "Negative"))
@@ -482,7 +478,7 @@ mutate(fang_data, daily_return = close/open -1, return_sign = if_else(daily_retu
 
 # Create New Variables
 
-By default, mutate() adds new columns on the right-hand side of your dataset, which makes it difficult to see what’s happening here. We can use the .before argument to instead add the variables to the left-hand side:
+By default, mutate() adds new columns on the right-hand side of your dataset, which makes it difficult to see what's happening here. We can use the .before argument to instead add the variables to the left-hand side:
 
 ```{r}
 mutate(fang_data, daily_return = close/open -1, return_sign = if_else(daily_return>0, "Positive", "Negative"), .before = 1)
@@ -510,9 +506,9 @@ mutate(fang_data, across(where(is.character), as.factor))
 
 Complete the following two exercises.
 
-1.  In the `fang_data` tibble, decompose the date as year, month, day, and weekday.Add them after the `date` column. Hint: Use the `year()`, `month()`, `day()`, and `wday()`. 
+1.  In the `fang_data` tibble, decompose the date as year, month, day, and weekday.Add them after the `date` column. Hint: Use the `year()`, `month()`, `day()`, and `wday()`.
 
-2. Add name of the Month and name of the day of the week. Hint: Read the documentation for month and wday
+2.  Add name of the Month and name of the day of the week. Hint: Read the documentation for `month()` and `wday()`.
 
 # Solutions: Exercise 1
 
@@ -523,7 +519,10 @@ mutate(fang_data, year = year(date), month = month(date), day = day(date), week_
 # Solutions: Exercise 2
 
 ```{r}
-?month
-?wday
 mutate(fang_data, year = year(date), month = month(date, label=TRUE, abbr = FALSE), day = day(date), week_day = wday(date,label=TRUE, abbr = FALSE ), .after = date)
 ```
+
+
+# summarize() - Sum up variables -
+
+(create cool slide for this one) - slide 00313
