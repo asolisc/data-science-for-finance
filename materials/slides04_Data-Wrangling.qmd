@@ -522,7 +522,95 @@ mutate(fang_data, year = year(date), month = month(date), day = day(date), week_
 mutate(fang_data, year = year(date), month = month(date, label=TRUE, abbr = FALSE), day = day(date), week_day = wday(date,label=TRUE, abbr = FALSE ), .after = date)
 ```
 
-
 # summarize() - Sum up variables -
 
 (create cool slide for this one) - slide 00313
+
+# Sum up variables
+
+`summarize(data, condition)` allows you to calculate summary statistics for particular variables.
+
+```{r}
+summarize(fang_data, avg_volume = mean(volume))
+```
+
+# Sum up variables
+
+`summarize(data, condition)` allows you to create new variables (columns) based on existing columns or not based on your data:
+
+```{r}
+summarize(fang_data, avg_volume = mean(volume))
+summarize(fang_data, n_rows = n())
+```
+
+** Equivalent Code in Base R **
+
+```{r}
+mean(fang_data$volume)
+nrow(fang_data)
+```
+
+# Sum up variables
+
+`summarize(data, condition)` allows you to calculate summary statistics for particular variables. You can use summarize() in tandem with across() to calculate summary statistics for several variables at once.
+
+```{r}
+summarize(fang_data, across(where(is.numeric), mean))
+```
+
+
+# Sum up variables
+
+`summarize(data, condition)` allows you to calculate summary statistics for particular variables. You can use summarize() in tandem with across() to calculate summary statistics for several variables at once.
+
+```{r}
+summarize(fang_data, across(c("volume", "adjusted"), ~mean(.x, na.rm = TRUE)))
+```
+
+# Sum up variables
+
+`summarize(data, condition)` allows you to calculate summary statistics for particular variables. You can use summarize() in tandem with across() to calculate summary statistics for several variables at once.
+
+```{r}
+summarize(fang_data, across(where(is.numeric), list(average = mean, max=max)))
+```
+
+# Sum up variables
+
+`summarize(data, condition)` allows you to calculate summary statistics for particular variables. You can use summarize() in tandem with across() to calculate summary statistics for several variables at once.
+
+```{r}
+summarize(fang_data, across(c("volume", "adjusted"), list(average = mean, max = max)))
+```
+
+# Your Turn!
+
+Complete the following two exercises.
+
+1.  In the `fang_data` tibble, get the standard deviation, minimun, maximum of all numeric variables.
+
+2.  In the `fang_data` tibble, compute the first quartile (25-percentile) and third quartile (75-percentile) for the `volume` and `high` columns. Hint: Use the quantile() function
+
+# Solutions: Exercise 1
+
+```{r}
+summarize(fang_data, across(where(is.numeric), list(sd = sd, min = min, max = max)))
+```
+
+# Solutions: Exercise 2
+
+```{r}
+summarize(fang_data, volume_first_quartile = quantile(volume, probs = .25), volume_third_quartile = quantile(volume, probs = .75))
+
+summarize(fang_data,
+          across(c("volume", "high"),
+                 list(
+                   first_quartile = ~quantile(.x, probs = 0.25), 
+                   third_quartile = ~quantile(.x, probs = .75)
+                   )
+                 )
+          )
+```
+
+
+
